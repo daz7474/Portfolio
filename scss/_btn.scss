@@ -1,0 +1,20 @@
+// Default button style
+
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  color: $white;
+  text-align: center;
+  line-height: 35px;
+  background: $brand-primary;
+  padding: 5px 15px;
+  margin-top: auto;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: aqua;
+    color: $brand-primary;
+  }
+}

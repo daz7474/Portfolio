@@ -1,0 +1,132 @@
+// ==========================================================================
+// Global Config $
+// ==========================================================================
+
+// Import if google fonts URL is defined
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+// Font styles
+$font-url--google: 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900';
+
+$font-primary: 'Poppins', sans-serif;
+
+// Base colors
+
+$white: #fff;
+$light-grey: #ddd;
+$grey: #666;
+$dark-grey: #454555;
+$light-black: #272936;
+$light-black-hvr: #121318;
+$black: #000;
+$accent: #ccc;
+$quote-author: #a3a8ac;
+
+$footer: #323544;
+$footer-dark: #212330;
+
+// Brand colors
+
+$brand-primary: #333645;
+
+// Card colors for card map
+
+$service-colors: (
+  'bespoke': #67809f,
+  'IT': #4183d7,
+  'digital': #2ecc71,
+  'telecoms': #d64541,
+  'web': #926fb1,
+  'cyber': #f62459,
+  'developer': #ce4125,
+);
+
+// Service each loop
+
+@mixin services($map) {
+
+  @each $service,
+  $service-color in $service-colors {
+    &-#{$service} {
+
+      .card-icon,
+      .btn-card {
+        background-color: $service-color;
+        color: $white;
+      }
+
+      .service-nav-i {
+        display: block;
+        font-size: 23px;
+        padding-bottom: 10px;
+        color: $service-color;
+      }
+
+      .arrow-down {
+        border-color: $service-color transparent transparent transparent;
+      }
+
+      .icon-#{$service} {
+        color: $service-color;
+      }
+    }
+
+    &-#{$service}:hover {
+      color: $white;
+      background-color: $service-color;
+      border-color: $service-color;
+      top: -10px;
+
+      .card-icon {
+        background-color: $white;
+        color: $service-color;
+      }
+
+      .btn-card {
+        color: $service-color;
+        background-color: $white;
+      }
+
+      .service-nav-i,
+      .icon-#{$service} {
+        color: $white;
+      }
+    }
+  }
+}
+
+// Breakpoints
+
+$breakpoints: (
+  '2xs': 480px,
+  'xs': 767px,
+  'sm': 768px,
+  'md': 992px,
+  'lg': 1200px,
+);
+
+// Media queries
+
+@mixin mq($break) {
+  $value: map-get($breakpoints, $break );
+  $sm: map-get($breakpoints, 'sm');
+
+  @if $value ==null {
+    @warn "`#{break}` is not a valid breakpoint name"
+  }
+
+  @else if $value <$sm {
+    @media (max-width: $value) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}

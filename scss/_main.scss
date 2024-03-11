@@ -1,0 +1,99 @@
+// ==========================================================================
+// Main
+// ==========================================================================
+
+// Containers
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq('sm') {
+    width: 750px;
+  }
+
+  @include mq('md') {
+    width: 970px;
+  }
+
+  @include mq('lg') {
+    width: 1200px;
+  }
+}
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+// Main
+
+// Projects
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  @include mq('sm') {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: $brand-primary;
+  background-color: $white;
+  border: 1px solid $accent;
+  border-radius: 15px;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+  padding: 30px;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: .5s ease;
+
+  &:hover {
+    top: -10px;
+  }
+
+  &-img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  & a {
+    color: $brand-primary;
+  }
+}

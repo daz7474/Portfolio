@@ -1,0 +1,47 @@
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+.grid {
+  display: grid;
+  background-color: $brand-primary;
+  max-width: 100%;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 75px auto auto auto auto;
+  grid-template-areas:
+    "top-nav"
+    "header"
+    "main"
+    "contact"
+    "footer";
+
+  .top-nav {
+    grid-area: top-nav;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  @include mq('sm') {
+    grid-template-columns: minmax(200px, 200px) 2fr;
+    grid-auto-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "nav header"
+      "nav main"
+      "nav contact"
+      "nav footer";
+  }
+}
