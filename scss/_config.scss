@@ -31,67 +31,28 @@ $footer-dark: #212330;
 // Brand colors
 
 $brand-primary: #333645;
+$brand-secondary: #6ae1cd;
 
 // Card colors for card map
 
-$service-colors: (
-  'bespoke': #67809f,
-  'IT': #4183d7,
-  'digital': #2ecc71,
-  'telecoms': #d64541,
-  'web': #926fb1,
-  'cyber': #f62459,
-  'developer': #ce4125,
+$project-colors: (
+  'brand-primary': #333645,
+  'brand-secondary': #6ae1cd,
 );
 
 // Service each loop
 
-@mixin services($map) {
+@mixin projects($map) {
 
-  @each $service,
-  $service-color in $service-colors {
-    &-#{$service} {
+  @each $project,
+  $project-color in $project-colors {
 
-      .card-icon,
-      .btn-card {
-        background-color: $service-color;
-        color: $white;
-      }
-
-      .service-nav-i {
-        display: block;
-        font-size: 23px;
-        padding-bottom: 10px;
-        color: $service-color;
-      }
-
-      .arrow-down {
-        border-color: $service-color transparent transparent transparent;
-      }
-
-      .icon-#{$service} {
-        color: $service-color;
-      }
-    }
-
-    &-#{$service}:hover {
-      color: $white;
-      background-color: $service-color;
-      border-color: $service-color;
+    &-#{$project}:hover {
+      background-color: $project-color;
+      border-color: $project-color;
       top: -10px;
 
-      .card-icon {
-        background-color: $white;
-        color: $service-color;
-      }
-
-      .btn-card {
-        color: $service-color;
-        background-color: $white;
-      }
-
-      .service-nav-i,
-      .icon-#{$service} {
+      & span {
         color: $white;
       }
     }

@@ -11,15 +11,15 @@
   padding-right: 15px;
 
   @include mq('sm') {
-    width: 750px;
+    min-width: calc(768px - 200px);
   }
 
   @include mq('md') {
-    width: 970px;
+    min-width: calc(992px - 200px);
   }
 
   @include mq('lg') {
-    width: 1200px;
+    min-width: calc(1200px - 200px);
   }
 }
 
@@ -43,8 +43,17 @@
 }
 
 .icon {
+  display: block;
   font-size: 24px;
   margin: 10px 0;
+}
+
+.text-primary {
+  color: $brand-primary;
+}
+
+.text-secondary {
+  color: $brand-secondary;
 }
 
 // Main
@@ -58,42 +67,101 @@
   position: relative;
   width: 100%;
 
-  @include mq('sm') {
-    width: 75%;
-    margin: 0 auto;
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: auto;
+
+    & a {
+      color: $brand-primary;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      top: 0;
+      text-align: center;
+      color: $brand-primary;
+      background-color: $white;
+      border: 1px solid $accent;
+      border-radius: 15px;
+      box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+      padding: 20px;
+      margin-top: 30px;
+      margin-left: 15px;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: .5s ease;
+
+      @include projects($project-colors);
+
+      &:hover {
+        top: -10px;
+      }
+
+      &-img {
+        max-width: 250px;
+        max-height: 250px;
+      }
+
+      & h3,
+      p {
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 0;
+// Contact form
+
+.form {
   width: 100%;
-  text-align: center;
-  color: $brand-primary;
-  background-color: $white;
-  border: 1px solid $accent;
-  border-radius: 15px;
-  box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
-  padding: 30px;
-  margin-top: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  cursor: pointer;
-  transition: .5s ease;
 
-  &:hover {
-    top: -10px;
+  & .contact-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    & .name-item {
+      margin-right: 15px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
-  &-img {
-    max-width: 250px;
-    max-height: 250px;
+  & .input,
+  & .textarea {
+    background-color: $light-grey;
+    background-color: none;
+    outline: 1px solid hsla(0, 0%, 100%, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin: 15px 0;
+
+    &:focus {
+      border-color: $brand-secondary;
+      outline: 0;
+      box-shadow: 0 0 8px rgba($brand-secondary, .6)
+    }
   }
 
-  & a {
-    color: $brand-primary;
+  & .textarea {
+    height: 150px;
+  }
+
+  @include mq('sm') {
+    width: 75%;
+    margin: 0 auto;
   }
 }

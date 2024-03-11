@@ -4,11 +4,15 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   letter-spacing: 0.4px;
-  color: #454555;
+  color: #333645;
   overflow-x: hidden;
   margin-left: 0;
   margin-right: 0;
@@ -135,7 +139,7 @@ button {
   cursor: pointer;
 }
 .btn:hover {
-  background-color: aqua;
+  background-color: #6ae1cd;
   color: #333645;
 }
 
@@ -175,9 +179,21 @@ header .heading {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100%;
   color: #fff;
   text-align: center;
+}
+header .heading h2 {
+  font-size: 52px;
+}
+header .heading .header-img {
+  max-width: 200px;
+  margin: 0 0 15px;
+}
+header .heading .scroll-down {
+  position: absolute;
+  bottom: 10px;
 }
 
 .nav-container {
@@ -189,19 +205,28 @@ header .heading {
   width: 200px;
   text-align: center;
 }
+.nav-container .btn {
+  width: 100%;
+}
 .nav-container .initials {
   width: 100%;
+  border-bottom: 1px solid #fff;
   text-align: center;
-  margin: 25px 0;
+  padding: 25px 0;
 }
-.nav-container .nav-content, .nav-container .contact, .nav-container .socials {
-  display: flex;
-  flex-direction: column;
+.nav-container .initials h2 {
+  font-size: 60px;
+  margin: 0;
+}
+.nav-container .initials .text-secondary:hover {
+  color: #fff;
+}
+.nav-container .github:hover {
+  color: #6ae1cd;
+}
+
+.contact {
   width: 100%;
-  border-top: 1px solid #fff;
-  line-height: 40px;
-}
-.nav-container .contact {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
 }
@@ -214,17 +239,17 @@ header .heading {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    min-width: 568px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    min-width: 792px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1200px;
+    min-width: 1000px;
   }
 }
 
@@ -248,8 +273,17 @@ header .heading {
 }
 
 .icon {
+  display: block;
   font-size: 24px;
   margin: 10px 0;
+}
+
+.text-primary {
+  color: #333645;
+}
+
+.text-secondary {
+  color: #6ae1cd;
 }
 
 .projects-container {
@@ -259,42 +293,114 @@ header .heading {
   position: relative;
   width: 100%;
 }
-@media (min-width: 768px) {
-  .projects-container {
-    width: 75%;
-    margin: 0 auto;
-  }
+.projects-container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: auto;
 }
-
-.card {
+.projects-container .item a {
+  color: #333645;
+}
+.projects-container .item .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   top: 0;
-  width: 100%;
   text-align: center;
   color: #333645;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 20px;
   margin-top: 30px;
   margin-left: 15px;
   margin-right: 15px;
   cursor: pointer;
   transition: 0.5s ease;
 }
-.card:hover {
+.projects-container .item .card-brand-primary:hover {
+  background-color: #333645;
+  border-color: #333645;
   top: -10px;
 }
-.card-img {
+.projects-container .item .card-brand-primary:hover span {
+  color: #fff;
+}
+.projects-container .item .card-brand-secondary:hover {
+  background-color: #6ae1cd;
+  border-color: #6ae1cd;
+  top: -10px;
+}
+.projects-container .item .card-brand-secondary:hover span {
+  color: #fff;
+}
+.projects-container .item .card:hover {
+  top: -10px;
+}
+.projects-container .item .card-img {
   max-width: 250px;
   max-height: 250px;
 }
-.card a {
-  color: #333645;
+.projects-container .item .card h3,
+.projects-container .item .card p {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
-/*# sourceMappingURL=Style.css.map */
+.form {
+  width: 100%;
+}
+.form .contact-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.form .contact-name .name-item {
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+.form .contact-name .name-item:last-child {
+  margin-right: 0;
+}
+.form .input, .form .textarea {
+  background-color: #ddd;
+  background-color: none;
+  outline: 1px solid hsla(0, 0%, 100%, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin: 15px 0;
+}
+.form .input:focus, .form .textarea:focus {
+  border-color: #6ae1cd;
+  outline: 0;
+  box-shadow: 0 0 8px rgba(106, 225, 205, 0.6);
+}
+.form .textarea {
+  height: 150px;
+}
+@media (min-width: 768px) {
+  .form {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.back-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+.back-to-top .icon {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

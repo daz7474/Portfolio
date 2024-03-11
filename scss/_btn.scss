@@ -14,7 +14,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: aqua;
+    background-color: $brand-secondary;
     color: $brand-primary;
   }
 }

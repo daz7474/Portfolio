@@ -45,9 +45,24 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100%;
     color: $white;
     text-align: center;
+
+    & h2 {
+      font-size: 52px;
+    }
+
+    & .header-img {
+      max-width: 200px;
+      margin: 0 0 15px;
+    }
+
+    & .scroll-down {
+      position: absolute;
+      bottom: 10px;
+    }
   }
 }
 
@@ -62,24 +77,33 @@ header {
   width: 200px;
   text-align: center;
 
+  & .btn {
+    width: 100%;
+  }
+
   & .initials {
     width: 100%;
-    text-align: center;
-    margin: 25px 0;
-  }
-
-  & .nav-content,
-  & .contact,
-  & .socials {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-top: 1px solid $white;
-    line-height: 40px;
-  }
-
-  & .contact {
-    border-top: 1px solid $white;
     border-bottom: 1px solid $white;
+    text-align: center;
+    padding: 25px 0;
+
+    & h2 {
+      font-size: 60px;
+      margin: 0;
+    }
+
+    & .text-secondary:hover {
+      color: $white;
+    }
   }
+
+  & .github:hover {
+    color: $brand-secondary;
+  }
+}
+
+.contact {
+  width: 100%;
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
 }
