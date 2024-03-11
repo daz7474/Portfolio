@@ -31,7 +31,9 @@ $footer-dark: #212330;
 // Brand colors
 
 $brand-primary: #333645;
+$brand-primary-hvr: #2c3149;
 $brand-secondary: #6ae1cd;
+$brand-secondary-hvr: #44bda9;
 
 // Card colors for card map
 
@@ -62,8 +64,8 @@ $project-colors: (
 // Breakpoints
 
 $breakpoints: (
-  '2xs': 480px,
-  'xs': 767px,
+  '2xs': 375px,
+  'xs': 480px,
   'sm': 768px,
   'md': 992px,
   'lg': 1200px,
@@ -73,13 +75,13 @@ $breakpoints: (
 
 @mixin mq($break) {
   $value: map-get($breakpoints, $break );
-  $sm: map-get($breakpoints, 'sm');
+  $xs2: map-get($breakpoints, '2xs');
 
   @if $value ==null {
     @warn "`#{break}` is not a valid breakpoint name"
   }
 
-  @else if $value <$sm {
+  @else if $value <$xs2 {
     @media (max-width: $value) {
       @content;
     }
