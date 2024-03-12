@@ -123,7 +123,10 @@ header {
   }
 
   & .github {
+    display: block;
     color: $white;
+    font-size: 32px;
+    margin: 10px 0;
 
     &:hover {
       color: $brand-secondary;

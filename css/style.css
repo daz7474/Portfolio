@@ -212,15 +212,15 @@ button {
   cursor: pointer;
 }
 .btn:hover {
-  background-color: #6ae1cd;
+  background-color: #8bd81b;
   color: #333645;
 }
 .btn-secondary {
-  background: #6ae1cd;
+  background: #8bd81b;
   color: #333645;
 }
 .btn-secondary:hover {
-  background-color: #44bda9;
+  background-color: #74af1b;
   color: #333645;
 }
 .btn-form {
@@ -233,7 +233,7 @@ button {
   color: #333645;
 }
 .btn-form:hover {
-  background-color: #6ae1cd;
+  background-color: #8bd81b;
 }
 
 .top-nav {
@@ -295,7 +295,7 @@ header .heading .header-img {
   max-width: 200px;
   border: 2px solid #333645;
   border-radius: 50%;
-  box-shadow: 0px 0px 100px 40px rgba(106, 225, 205, 0.9);
+  box-shadow: 0px 0px 100px 40px rgba(139, 216, 27, 0.9);
   margin-bottom: 15px;
   z-index: 5;
 }
@@ -340,10 +340,13 @@ header .heading .scroll-down {
   color: #fff;
 }
 .nav-container .github {
+  display: block;
   color: #fff;
+  font-size: 32px;
+  margin: 10px 0;
 }
 .nav-container .github:hover {
-  color: #6ae1cd;
+  color: #8bd81b;
 }
 @media (min-width: 768px) {
   .nav-container {
@@ -417,7 +420,7 @@ header .heading .scroll-down {
 }
 
 .text-secondary {
-  color: #6ae1cd;
+  color: #8bd81b;
 }
 
 .text-light {
@@ -519,8 +522,8 @@ header .heading .scroll-down {
   color: #fff;
 }
 .projects-container .item .card-brand-secondary:hover {
-  background-color: #6ae1cd;
-  border-color: #6ae1cd;
+  background-color: #8bd81b;
+  border-color: #8bd81b;
   top: -10px;
 }
 .projects-container .item .card-brand-secondary:hover span {
@@ -589,9 +592,9 @@ header .heading .scroll-down {
   margin: 15px 0;
 }
 .form .input:focus, .form .textarea:focus {
-  border-color: #6ae1cd;
+  border-color: #8bd81b;
   outline: 0;
-  box-shadow: 0 0 8px rgba(106, 225, 205, 0.6);
+  box-shadow: 0 0 8px rgba(139, 216, 27, 0.6);
 }
 .form .textarea {
   height: 150px;
