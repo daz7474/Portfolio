@@ -34,65 +34,6 @@
   }
 }
 
-// Header
-
-header {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-
-  .header-vid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0;
-    object-fit: cover;
-  }
-
-  & .heading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: $white;
-    text-align: center;
-    padding: 0 15px;
-
-    & h2 {
-      font-size: 32px;
-      z-index: 5;
-    }
-
-    & .header-img {
-      max-width: 200px;
-      border: 2px solid $brand-primary;
-      border-radius: 50%;
-      box-shadow: 0px 0px 100px 40px rgba($brand-secondary, 0.9);
-      margin-bottom: 15px;
-      z-index: 5;
-
-      @include mq('sm') {
-        max-width: 250px;
-      }
-    }
-
-    & .scroll-down {
-      z-index: 5;
-    }
-  }
-}
-
-.alt {
-  max-height: 600px;
-
-  & .header-vid {
-    max-height: 600px;
-  }
-}
-
 // Side nav
 
 .nav-container {
@@ -122,6 +63,12 @@ header {
     }
   }
 
+  .nav-content {
+    @include mq('md') {
+      margin: 20px 0;
+    }
+  }
+
   & .github {
     display: block;
     color: $white;
@@ -148,4 +95,76 @@ header {
   width: 100%;
   border-top: 1px solid $white;
   border-bottom: 1px solid $white;
+}
+
+// Header
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .header-vid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    object-fit: cover;
+  }
+
+  & .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: $white;
+    text-align: center;
+    padding: 0 15px;
+
+    & h2 {
+      font-size: 28px;
+      margin-bottom: 5px;
+      z-index: 5;
+
+      @include mq('sm') {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+    }
+
+    & .header-img {
+      max-width: 150px;
+      border-radius: 50%;
+      z-index: 5;
+
+      @include mq('xs') {
+        max-width: 150px;
+      }
+
+      @include mq('sm') {
+        max-width: 200px;
+        margin-bottom: 15px;
+      }
+
+      @include mq('md') {
+        max-width: 250px;
+      }
+    }
+
+    & .scroll-down {
+      font-size: 14px;
+      z-index: 5;
+    }
+  }
+}
+
+.alt {
+  max-height: 600px;
+
+  & .header-vid {
+    max-height: 600px;
+  }
 }

@@ -263,58 +263,6 @@ button {
   }
 }
 
-header {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-header .header-vid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-  object-fit: cover;
-}
-header .heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  color: #fff;
-  text-align: center;
-  padding: 0 15px;
-}
-header .heading h2 {
-  font-size: 32px;
-  z-index: 5;
-}
-header .heading .header-img {
-  max-width: 200px;
-  border: 2px solid #333645;
-  border-radius: 50%;
-  box-shadow: 0px 0px 100px 40px rgba(139, 216, 27, 0.9);
-  margin-bottom: 15px;
-  z-index: 5;
-}
-@media (min-width: 768px) {
-  header .heading .header-img {
-    max-width: 250px;
-  }
-}
-header .heading .scroll-down {
-  z-index: 5;
-}
-
-.alt {
-  max-height: 600px;
-}
-.alt .header-vid {
-  max-height: 600px;
-}
-
 .nav-container {
   display: none;
 }
@@ -338,6 +286,11 @@ header .heading .scroll-down {
 }
 .nav-container .initials .text-secondary:hover {
   color: #fff;
+}
+@media (min-width: 992px) {
+  .nav-container .nav-content {
+    margin: 20px 0;
+  }
 }
 .nav-container .github {
   display: block;
@@ -364,6 +317,74 @@ header .heading .scroll-down {
   width: 100%;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+header .header-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  object-fit: cover;
+}
+header .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 0 15px;
+}
+header .heading h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  z-index: 5;
+}
+@media (min-width: 768px) {
+  header .heading h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+}
+header .heading .header-img {
+  max-width: 150px;
+  border-radius: 50%;
+  z-index: 5;
+}
+@media (min-width: 576px) {
+  header .heading .header-img {
+    max-width: 150px;
+  }
+}
+@media (min-width: 768px) {
+  header .heading .header-img {
+    max-width: 200px;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 992px) {
+  header .heading .header-img {
+    max-width: 250px;
+  }
+}
+header .heading .scroll-down {
+  font-size: 14px;
+  z-index: 5;
+}
+
+.alt {
+  max-height: 600px;
+}
+.alt .header-vid {
+  max-height: 600px;
 }
 
 .container {
