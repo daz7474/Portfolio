@@ -64,8 +64,7 @@ $project-colors: (
 // Breakpoints
 
 $breakpoints: (
-  '2xs': 375px,
-  'xs': 480px,
+  'xs': 576px,
   'sm': 768px,
   'md': 992px,
   'lg': 1200px,
@@ -75,13 +74,13 @@ $breakpoints: (
 
 @mixin mq($break) {
   $value: map-get($breakpoints, $break );
-  $xs2: map-get($breakpoints, '2xs');
+  $xs: map-get($breakpoints, 'xs');
 
   @if $value ==null {
     @warn "`#{break}` is not a valid breakpoint name"
   }
 
-  @else if $value <$xs2 {
+  @else if $value <$xs {
     @media (max-width: $value) {
       @content;
     }

@@ -68,7 +68,6 @@ p {
 }
 
 a {
-  color: #fff;
   text-decoration: none;
 }
 
@@ -119,7 +118,7 @@ button {
 }
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: minmax(200px, 200px) 2fr;
+    grid-template-columns: 200px 1fr;
     grid-auto-rows: auto auto auto auto auto;
     grid-template-areas: "nav header" "nav main" "nav contact" "nav footer";
   }
@@ -149,6 +148,18 @@ button {
 .btn-secondary:hover {
   background-color: #44bda9;
   color: #333645;
+}
+.btn-form {
+  width: 150px;
+  background: #fff;
+  border: 1px solid #333645;
+  border-radius: 6px;
+}
+.btn-form a {
+  color: #333645;
+}
+.btn-form:hover {
+  background-color: #6ae1cd;
 }
 
 .top-nav {
@@ -197,73 +208,30 @@ header .heading {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70%;
+  height: 100%;
   color: #fff;
   text-align: center;
+  padding: 0 15px;
 }
 header .heading h2 {
-  font-size: 38px;
+  font-size: 32px;
   z-index: 5;
-}
-@media (min-width: 480px) {
-  header .heading h2 {
-    font-size: 28px;
-  }
-}
-@media (min-width: 992px) {
-  header .heading h2 {
-    font-size: 52px;
-  }
-}
-@media (min-width: 992px) {
-  header .heading h2 {
-    font-size: 52px;
-  }
 }
 header .heading .header-img {
   max-width: 200px;
   border: 2px solid #333645;
   border-radius: 50%;
   box-shadow: 0px 0px 100px 40px rgba(106, 225, 205, 0.9);
-  margin-top: 10px;
+  margin-bottom: 15px;
   z-index: 5;
-}
-@media (min-width: 480px) {
-  header .heading .header-img {
-    max-width: 150px;
-    margin-top: 0;
-  }
 }
 @media (min-width: 768px) {
   header .heading .header-img {
-    margin-top: 0;
-  }
-}
-@media (min-width: 992px) {
-  header .heading .header-img {
     max-width: 250px;
-    margin-top: 20px;
   }
 }
 header .heading .scroll-down {
-  position: absolute;
-  bottom: 80px;
   z-index: 5;
-}
-@media (min-width: 480px) {
-  header .heading .scroll-down {
-    bottom: 70px;
-  }
-}
-@media (min-width: 768px) {
-  header .heading .scroll-down {
-    bottom: 0;
-  }
-}
-@media (min-width: 768px) {
-  header .heading {
-    height: 100%;
-  }
 }
 
 .alt {
@@ -297,6 +265,9 @@ header .heading .scroll-down {
 .nav-container .initials .text-secondary:hover {
   color: #fff;
 }
+.nav-container .github {
+  color: #fff;
+}
 .nav-container .github:hover {
   color: #6ae1cd;
 }
@@ -318,46 +289,31 @@ header .heading .scroll-down {
   border-bottom: 1px solid #fff;
 }
 
-.main-container {
+.container {
+  min-width: 280px;
+  max-width: 575px;
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 768px) {
-  .main-container {
-    min-width: 568px;
+@media (min-width: 576px) {
+  .container {
+    max-width: 576px;
     padding-left: 15px;
     padding-right: 15px;
   }
 }
-@media (min-width: 992px) {
-  .main-container {
-    min-width: 792px;
-  }
-}
-@media (min-width: 1200px) {
-  .main-container {
-    min-width: 1000px;
-  }
-}
-
-.inner-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 @media (min-width: 768px) {
-  .inner-container {
+  .container {
     max-width: 768px;
   }
 }
 @media (min-width: 992px) {
-  .inner-container {
-    max-width: 992px;
+  .container {
+    max-width: 996px;
   }
 }
 @media (min-width: 1200px) {
-  .inner-container {
+  .container {
     max-width: 1260px;
   }
 }
@@ -367,14 +323,8 @@ header .heading .scroll-down {
   padding-bottom: 50px;
 }
 
-.row {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.col {
-  padding-left: 15px;
-  padding-right: 15px;
+.link {
+  color: #fff;
 }
 
 .link:hover {
@@ -383,6 +333,7 @@ header .heading .scroll-down {
 
 .icon {
   display: block;
+  color: #fff;
   font-size: 24px;
   margin: 10px 0;
 }
@@ -404,19 +355,28 @@ header .heading .scroll-down {
   font-weight: 600;
 }
 
+.title-heading {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   width: 100%;
 }
 .projects-container .item {
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  margin-left: 8px;
-  margin-right: 8px;
+  min-width: 280px;
   margin-top: auto;
 }
 .projects-container .item a {
@@ -434,10 +394,10 @@ header .heading .scroll-down {
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 20px 5px 20px 5px;
   margin-top: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -469,23 +429,29 @@ header .heading .scroll-down {
   margin-top: 10px;
   margin-bottom: 0;
 }
+@media (min-width: 576px) {
+  .projects-container .item .card {
+    padding: 20px 15px 20px 15px;
+  }
+}
+@media (min-width: 576px) {
+  .projects-container .item {
+    width: 350px;
+  }
+}
+@media (min-width: 576px) {
+  .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
 .form {
-  width: 90%;
-  margin: 0 auto;
-}
-.form .contact-name {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 100%;
-}
-.form .contact-name .name-item {
-  margin-right: 15px;
-  margin-bottom: 0;
-}
-.form .contact-name .name-item:last-child {
-  margin-right: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 auto;
 }
 .form .input, .form .textarea {
   background-color: #fff;
@@ -504,26 +470,30 @@ header .heading .scroll-down {
 .form .textarea {
   height: 150px;
 }
+@media (min-width: 576px) {
+  .form .contact-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .form .contact-name .name-item {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+  .form .contact-name .name-item:last-child {
+    margin-right: 0;
+  }
+}
 @media (min-width: 768px) {
   .form {
     width: 75%;
-    margin: 0 auto;
   }
 }
-
-.scs-heading {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.scs,
-.treehouse,
-.netmatters {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 20px 0;
+@media (min-width: 768px) {
+  .form {
+    width: 60%;
+  }
 }
 
 .back-to-top {
