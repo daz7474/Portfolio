@@ -17,7 +17,7 @@
 
     <div class="top-nav grid-item">
       <h1>
-        <a href="index.html">
+        <a class="text-light" href="index.html">
           DL
         </a>
       </h1>
@@ -28,14 +28,14 @@
 
     <!-- Header -->
 
-    <header class="grid-item main-container alt">
+    <header class="grid-item alt">
       <video class="header-vid" src="img/aurora-borealis.mp4" autoplay loop muted></video>
       <div class="heading">
         <h2>My Name is Darren Lindsay</h2>
 
         <img class="header-img" src="img/portrait.png" alt="">
 
-        <a class="scroll-down" href="#scs">
+        <a class="text-light scroll-down" href="#main">
           Scroll Down
           <i class="icon fa-solid fa-arrow-down"></i>
         </a>
@@ -56,14 +56,14 @@
         </div>
 
         <div class="nav-content">
-          <a class="btn" href="#">About Me</a>
-          <a class="btn" href="#portfolio">My Portfolio</a>
-          <a class="btn" href="#">Coding Examples</a>
-          <a class="btn" href="#">SCS Scheme</a>
+          <a class="btn" href="about.html">About Me</a>
+          <a class="btn" href="index.html#main">My Portfolio</a>
+          <a class="btn" href="coding.html">Coding Examples</a>
+          <a class="btn" href="scs.html">SCS Scheme</a>
         </div>
 
         <div class="contact">
-          <a class="btn" href="#form">Contact Me</a>
+          <a class="btn" href="index.html#form">Contact Me</a>
         </div>
 
         <div class="socials">
@@ -77,33 +77,32 @@
 
     <!-- Main -->
 
-    <main class="container" id="scs">
-      <div class="inner-container">
+    <main id="main">
+      <div class="container">
 
-        <div class="scs-heading">
+        <div class="title-heading">
           <h2>SCS <span class="text-secondary">Scheme</span></h2>
         </div>
 
-        <div class="scs">
+        <!-- SCS Shcheme -->
+
+        <div class="heading">
           <h3>
             Introduction To Scion Coalition Scheme
           </h3>
           <p>
-            The Scion Coalition Scheme is an intensive, specially tailored program run by Netmatters in order to give
+            The Scion Coalition Scheme is an intensive, specially tailored training program run by Netmatters in order
+            to give
             willing candidates the opportunity to enter the industry as web developers. Under the supervision of senior
             web developers, scions generally aim to complete training within six to nine months. The course is intensive
             and therefore the level of learning achieved is extensive in a short space of time. For more information
             please follow the link below.
           </p>
-          <a class="btn"
-            href="https://www.netmatters.co.uk/train-for-a-career-in-tech/scion-scheme-frequently-asked-questions"
-            target="_blank">
-            SCS
-            FAQ
-          </a>
         </div>
 
-        <div class="treehouse">
+        <!-- Treehouse -->
+
+        <div class="heading">
           <h3>
             Treehouse
           </h3>
@@ -112,12 +111,14 @@
             C#
             programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing
             them to track their progress and see how much they've covered in certain areas. Follow the link below to see
-            my progress.
+            my score.
           </p>
           <a class="btn" href="https://teamtreehouse.com/profiles/darrenlindsay2" target="_blank">Treehouse Score</a>
         </div>
 
-        <div class="netmatters">
+        <!-- Netmatters -->
+
+        <div class="heading">
           <h3>
             About Netmatters
           </h3>
@@ -147,7 +148,7 @@
 
     <footer>
       <div class="back-to-top">
-        <a href="#body">
+        <a class="text-light" href="#body">
           <i class="icon fa-solid fa-arrow-up"></i>
           Back To Top
         </a>
