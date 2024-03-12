@@ -433,7 +433,12 @@ header .heading .scroll-down {
   display: flex;
   justify-content: center;
   padding: 0 10px;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
+}
+.title-heading h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0;
 }
 
 .heading {
@@ -442,6 +447,33 @@ header .heading .scroll-down {
   align-items: flex-start;
   padding: 0 10px;
   margin: 20px 0;
+}
+.heading-skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.heading-skills .skills-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+.heading-skills .skills-item span {
+  font-size: 96px;
+  margin: 10px 0;
+}
+@media (min-width: 992px) {
+  .heading-skills .skills-item {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .heading-skills .skills-item {
+    width: 33.3%;
+  }
 }
 
 .projects-container {
@@ -545,7 +577,7 @@ header .heading .scroll-down {
   width: 100%;
   padding-left: 5px;
   padding-right: 5px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 .form .input, .form .textarea {
   background-color: #fff;
