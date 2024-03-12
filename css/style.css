@@ -602,6 +602,7 @@ header .heading .scroll-down {
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 50px;
+  margin: 0 auto;
 }
 .form .input, .form .textarea {
   background-color: #fff;
