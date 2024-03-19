@@ -612,19 +612,6 @@ header .heading .scroll-down {
     width: 50%;
   }
 }
-@media (min-width: 1200px) {
-  .heading-skills .skills-item {
-    width: 33.3%;
-  }
-}
-@media (min-width: 1200px) {
-  .heading-skills .skills-item:last-child {
-    width: 100%;
-  }
-  .heading-skills .skills-item:last-child p {
-    width: 380px;
-  }
-}
 
 .projects-container {
   display: flex;
