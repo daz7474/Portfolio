@@ -16,15 +16,44 @@
 
     <!-- Top Nav -->
 
-    <div class="top-nav grid-item">
-      <h1>
+    <div class="top-nav top grid-item">
+      <h1 class="mobile-initials">
         <a class="text-light" href="index.html">
           DL
         </a>
       </h1>
       <button class="hamburger">
         <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </button>
+
+      <!-- Mobile Slide Menu -->
+
+      <div class="mobile-menu">
+
+        <div class="nav-content-mobile">
+          <a class="btn" href="about.html">About Me</a>
+          <a class="btn" href="#main">My Portfolio</a>
+          <a class="btn" href="coding.html">Coding Examples</a>
+          <a class="btn" href="scs.html">SCS Scheme</a>
+        </div>
+
+        <div class="contact-mobile">
+          <a class="btn" href="#form">Contact Me</a>
+        </div>
+
+        <div class="socials">
+          <a class="social-link" href="https://github.com/daz7474" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/darren-lindsay/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- Header -->
@@ -32,7 +61,7 @@
     <header class="grid-item">
       <video class="header-vid" src="img/aurora-borealis.mp4" autoplay loop muted></video>
       <div class="heading">
-        <h2>My Name is Darren Lindsay</h2>
+        <h1 class="typing title-heading"></h1>
 
         <img class="header-img" src="img/portrait.png" alt="">
 
@@ -68,8 +97,11 @@
         </div>
 
         <div class="socials">
-          <a class="github" href="https://github.com/daz7474" target="_blank">
+          <a class="social-link" href="https://github.com/daz7474" target="_blank">
             <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/darren-lindsay/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
         </div>
 
@@ -247,32 +279,51 @@
           <div class="heading-skills">
 
             <div class="skills-item">
-              <span class="icon-html5"></span>
-              <h3>HTML</h3>
-              <p>
-                HTML is the standard markup language for documents designed to be displayed
-                in
-                a web browser. It defines the content and structure of web content.
-              </p>
+              <div class="skills-content">
+                <span class="icon-html5"></span>
+                <h3>HTML</h3>
+                <p>
+                  HTML is the standard markup language for documents designed to be displayed
+                  in
+                  a web browser. It defines the content and structure of web content.
+                </p>
+              </div>
             </div>
 
             <div class="skills-item">
-              <span class="icon-css3"></span>
-              <h3>CSS</h3>
-              <p>
-                Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling
-                of
-                a document written in a markup language such as HTML.
-              </p>
+              <div class="skills-content">
+                <span class="icon-css3"></span>
+                <h3>CSS</h3>
+                <p>
+                  Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and
+                  styling
+                  of
+                  a document written in a markup language such as HTML.
+                </p>
+              </div>
             </div>
 
             <div class="skills-item">
-              <span class="icon-sass"></span>
-              <h3>Sass</h3>
-              <p>
-                Sass is a preprocessor scripting language that is interpreted or
-                compiled into CSS. Sass extends the use of CSS by implementing features such as variables and mixins.
-              </p>
+              <div class="skills-content">
+                <span class="icon-sass"></span>
+                <h3>Sass</h3>
+                <p>
+                  Sass is a preprocessor scripting language that is interpreted or
+                  compiled into CSS. Sass extends the use of CSS by implementing features such as variables and mixins.
+                </p>
+              </div>
+            </div>
+
+            <div class="skills-item">
+              <div class="skills-content">
+                <span class="icon-javascript"></span>
+                <h3>JavaScript</h3>
+                <p>
+                  JavaScript is a programming language for creating dynamic features to web pages. It works alongside
+                  HTML
+                  and CSS to provide user interaction.
+                </p>
+              </div>
             </div>
 
           </div>
@@ -300,22 +351,22 @@
               <i class="icon fa-solid fa-envelope"></i>
             </div>
 
-            <form class="form" action="#">
+            <form class="form" id="contact-form" action="">
 
               <div class="contact-name">
-                <input class="input name-item" id="contact-first-name" type="text" placeholder="First Name*">
+                <input class="input name-item" id="contact-first-name" type="text" required placeholder="First Name*">
 
-                <input class="input name-item" id="contact-last-name" type="text" placeholder="Last Name*">
+                <input class="input name-item" id="contact-last-name" type="text" required placeholder="Last Name*">
               </div>
 
-              <input class="input" id="contact-email" type="email" placeholder="Email*">
+              <input class="input" id="contact-email" type="email" required placeholder="Email*">
 
               <input class="input" id="contact-subject" type="text" placeholder="Subject">
 
-              <textarea class="textarea" id="contact-msg" placeholder="Message"></textarea>
+              <textarea class="textarea" id="contact-msg" required placeholder="Message*"></textarea>
 
-              <button class="btn btn-form" type="submit">
-                <a href="#">Submit</a>
+              <button class="btn btn-form" id="contact-submit" type="submit">
+                Submit
               </button>
             </form>
           </div>
@@ -338,6 +389,12 @@
 
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/sticky/sticky.js"></script>
+  <script src="js/mobileMenu.js"></script>
+  <script src="js/typingEffect.js"></script>
+  <script src="js/formValidation.js"></script>
 </body>
 
 </html>
