@@ -23,7 +23,35 @@
       </h1>
       <button class="hamburger">
         <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </button>
+    </div>
+
+    <!-- Mobile Slide Menu -->
+
+    <div class="mobile-menu">
+
+      <div class="nav-content-mobile">
+        <a class="btn" href="about.html">About Me</a>
+        <a class="btn" href="index.html#main">My Portfolio</a>
+        <a class="btn" href="coding.html">Coding Examples</a>
+        <a class="btn" href="scs.html">SCS Scheme</a>
+      </div>
+
+      <div class="contact-mobile">
+        <a class="btn" href="index.html#form">Contact Me</a>
+      </div>
+
+      <div class="socials">
+        <a class="social-link" href="https://github.com/daz7474" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/in/darren-lindsay/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+
     </div>
 
     <!-- Header -->
@@ -31,9 +59,7 @@
     <header class="grid-item alt">
       <video class="header-vid" src="img/aurora-borealis.mp4" autoplay loop muted></video>
       <div class="heading">
-        <h2>My Name is Darren Lindsay</h2>
-
-        <img class="header-img" src="img/portrait.png" alt="">
+        <h1 class="typing title-heading">Coding Examples</h1>
 
         <a class="text-light scroll-down" href="#main">
           Scroll Down
@@ -67,8 +93,11 @@
         </div>
 
         <div class="socials">
-          <a class="github" href="https://github.com/daz7474" target="_blank">
+          <a class="social-link" href="https://github.com/daz7474" target="_blank">
             <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/darren-lindsay/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
         </div>
 
@@ -77,15 +106,93 @@
 
     <!-- Main -->
 
-    <main class="section" id="main">
+    <main id="main">
 
-      <div class="title-heading">
-        <h2>Coding Examples</h2>
+      <div class="container">
+
+        <div class="title-heading">
+          <h2>JavaScript <span class="text-secondary">Code</span></h2>
+        </div>
+
+        <div class="code-container">
+
+          <!-- Mobile Menu Code -->
+          <div class="code-item">
+            <a data-fslightbox href="img/Menu-Snippet-Large.png">
+              <img class="code-img" src="img/Menu-Snippet.png" alt="">
+            </a>
+            <div class="code-content">
+              <h3 class="code-h3">
+                Mobile Menu
+              </h3>
+              <p class="code-p">
+                This is code for the mobile menu. Here I am declaring variables to get a reference to the button,
+                menu,
+                menu links and the bar icons.
+                <br>
+                I created an event listener for when the menu button is clicked and toggle a CSS class of
+                "menu-active"
+                which changes "display: none;" to "display: flex;"
+                <br>
+                Then I have created a loop to iterate over all the menu links to create another event listener for
+                when
+                a
+                link
+                is clicked. This then toggles the CSS class again to make sure the menu closes if a link is clicked.
+              </p>
+            </div>
+          </div>
+
+          <!-- Typing Effect Code -->
+          <div class="code-item">
+            <a data-fslightbox href="img/Typing-Snippet-Large.png">
+              <img class="code-img" src="img/Typing-Snippet.png" alt="">
+            </a>
+            <div class="code-content">
+              <h3 class="code-h3">
+                Typing Effect
+              </h3>
+              <p class="code-p">
+                This code is for the typing effect on the banner. First I declared a variable that gets a reference to
+                the titles div element and created another which stores the sentence to use in an array.
+                <br>
+                First I am checking if the div element already has a title. If so, then I'm store the existing title
+                into
+                the "sentence" variable and clearing what is in the HTML.
+                <br>
+                Before creating a function, I'm setting the letter index to 0 and speed of the typing effect. The
+                function iterates through each letter in the "sentence" variable and displays it in the title div.
+              </p>
+            </div>
+          </div>
+
+          <!-- Form Validation Code -->
+          <div class="code-item">
+            <a data-fslightbox href="img/Form-Snippet-Large.png">
+              <img class="code-img" src="img/Form-Snippet.png" alt="">
+            </a>
+            <div class="code-content">
+              <h3 class="code-h3">
+                Form Validation
+              </h3>
+              <p class="code-p">
+                Code for the contact form validation. I'm getting a reference to each input field and the submit button.
+                I created a variable to check the email field by testing it with the regex.
+                <br>
+                An event listener for when the form button is clicked, checks each input field for any empty values.
+                This will add a CSS class to highlight each empty field and add a string to the array variable
+                "required".
+                <br>
+                If the "required" variable has any value, preventDefault stops the form from being submitted. If all
+                fields are valid, the form gets submitted.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="title-heading">
-        <h3>Coming Soon</h3>
-      </div>
     </main>
 
     <!-- Footer -->
@@ -100,6 +207,13 @@
     </footer>
 
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/sticky/sticky.js"></script>
+  <script src="js/fslightbox.js"></script>
+  <script src="js/mobileMenu.js"></script>
+  <script src="js/typingEffect.js"></script>
 
 </body>
 
