@@ -11,13 +11,13 @@ const msg = document.getElementById("contact-msg");
 const submitBtn = document.getElementById("contact-submit");
 
 // Email validation
-const emailRegex = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, "gm");
-
-// Store empty fields in array
-let required = [];
+let emailRegex = /^[\w.%+-]+@((?:[\w-]+\.)+[a-zA-Z]{2,})$/, i;
 
 // When submit button is clicked, check if fields have values
 submitBtn.addEventListener("click", (e) => {
+
+  // Store empty fields in array
+  let required = [];
 
   // Check if first name is empty
   if (firstName.value === "" || firstName.value == null) {
@@ -47,6 +47,7 @@ submitBtn.addEventListener("click", (e) => {
   // Prevent default if required fields are empty
   if (required.length > 0) {
     e.preventDefault;
+    return false;
   }
 
   // Submit form
