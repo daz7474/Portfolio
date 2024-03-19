@@ -75,7 +75,6 @@
   margin: 20px 0 0 0;
 
   & h2 {
-    font-size: 42px;
     font-weight: 600;
     margin: 0;
   }
@@ -87,6 +86,25 @@
   align-items: flex-start;
   padding: 0 10px;
   margin: 20px 0;
+
+  & .heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+      max-width: 40%;
+      margin-left: 20px;
+
+      @include mq('md') {
+        max-width: 100%;
+      }
+    }
+
+    @include mq('md') {
+      flex-direction: row;
+    }
+  }
 
   &-skills {
     display: flex;
@@ -101,9 +119,16 @@
       width: 100%;
       padding: 0 15px;
 
-      & span {
-        font-size: 96px;
-        margin: 10px 0;
+      & .skills-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        & span {
+          font-size: 96px;
+          margin: 10px 0;
+        }
       }
 
       @include mq('md') {
@@ -112,6 +137,16 @@
 
       @include mq('lg') {
         width: 33.3%;
+      }
+    }
+
+    @include mq('lg') {
+      & .skills-item:last-child {
+        width: 100%;
+
+        p {
+          width: 380px;
+        }
       }
     }
   }
@@ -167,13 +202,13 @@
       }
 
       & h2 {
-        font-size: 26px;
+        font-size: 20px;
         font-weight: 600;
       }
 
       & h2,
       p {
-        margin-top: 10px;
+        margin-top: 15px;
         margin-bottom: 0;
 
         &:nth-child(3n),
@@ -264,6 +299,10 @@
       height: 150px;
     }
 
+    & button {
+      color: $brand-primary;
+    }
+
     @include mq('xs') {
       & .contact-name {
         display: flex;
@@ -296,5 +335,59 @@
 
   @include mq('lg') {
     max-width: 75%;
+  }
+}
+
+.required::placeholder {
+  color: red;
+}
+
+// Code snippets
+
+.code-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+
+  & .code-item {
+    margin: 0 10px;
+
+    & .code-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 15px 15px 0 0;
+
+      @include mq('xs') {
+        width: 400px;
+      }
+    }
+
+    & .code-content {
+      border: 1px solid $brand-primary;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 10px 10px 10px rgba($brand-primary, .3);
+      margin: -2px 0 20px 0;
+
+      & .code-h3 {
+        text-align: center;
+      }
+
+      & .code-h3,
+      & .code-p {
+        padding: 10px;
+        margin: 0;
+      }
+
+      &:hover {
+        background-color: $brand-secondary;
+        transition: 1s ease;
+      }
+
+      @include mq('xs') {
+        width: 400px;
+      }
+    }
   }
 }
