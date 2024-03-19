@@ -230,6 +230,7 @@ header {
     & .header-img {
       max-width: 150px;
       border-radius: 50%;
+      margin-bottom: 5px;
       z-index: 5;
 
       @include mq('xs') {
