@@ -49,7 +49,6 @@ submitBtn.addEventListener("click", (e) => {
     e.preventDefault;
   }
 
-  console.log(required);
   // Submit form
   form.submit();
 });
