@@ -47,11 +47,9 @@ submitBtn.addEventListener("click", (e) => {
   // Prevent default if required fields are empty
   if (required.length > 0) {
     e.preventDefault;
-    console.log("Form NOT Submitted");
     return false;
   }
 
   // Submit form
   form.submit();
-  console.log("Form Submitted");
 });
