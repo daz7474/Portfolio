@@ -11,7 +11,7 @@ const msg = document.getElementById("contact-msg");
 const submitBtn = document.getElementById("contact-submit");
 
 // Email validation
-let emailRegex = /^[\w.%+-]+@((?:[\w-]+\.)+[a-zA-Z]{2,})$/, i;
+let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 // When submit button is clicked, check if fields have values
 submitBtn.addEventListener("click", (e) => {
@@ -47,9 +47,11 @@ submitBtn.addEventListener("click", (e) => {
   // Prevent default if required fields are empty
   if (required.length > 0) {
     e.preventDefault;
+    console.log("Form NOT Submitted");
     return false;
   }
 
   // Submit form
   form.submit();
+  console.log("Form Submitted");
 });
