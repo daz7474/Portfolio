@@ -21,7 +21,7 @@
   }
 
   @include mq('md') {
-    max-width: 996px;
+    max-width: 992px;
   }
 
   @include mq('lg') {
@@ -331,30 +331,32 @@
 // Code snippets
 
 .code-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0;
+  max-width: 100%;
+  margin: 20px auto;
 
   & .code-item {
+    max-width: 100%;
     margin: 0 10px;
 
-    & .code-img {
-      display: block;
-      width: 100%;
-      height: auto;
+    & .code-background {
+      background-color: $brand-primary;
       border-radius: 15px 15px 0 0;
+      color: $white;
+      height: 300px;
+      white-space: pre-wrap;
+      overflow: auto;
 
-      @include mq('xs') {
-        width: 400px;
+      & .code-snippet {
+        background: none;
+        font-size: 14px;
       }
     }
 
     & .code-content {
       border: 1px solid $brand-primary;
       border-radius: 0 0 15px 15px;
-      box-shadow: 10px 10px 10px rgba($brand-primary, .3);
-      margin: -2px 0 20px 0;
+      box-shadow: 1px 10px 10px rgba($brand-primary, .3);
+      margin: 0 0 20px 0;
 
       & .code-h3 {
         text-align: center;
@@ -370,10 +372,22 @@
         background-color: $brand-secondary;
         transition: 1s ease;
       }
-
-      @include mq('xs') {
-        width: 400px;
-      }
     }
   }
+
+  @include mq('xxs') {
+    max-width: 280px;
+  }
+
+  @include mq('sm') {
+    max-width: 500px;
+  }
+
+  @include mq('md') {
+    max-width: 750px;
+  }
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
 }

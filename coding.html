@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/1f2dc43538.js" crossorigin="anonymous"></script>
   <title>Darren Lindsay Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="js/slick/slick.css">
+  <link rel="stylesheet" href="js/slick/slick-theme.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -110,82 +113,199 @@
         </div>
 
         <div class="code-container">
+          <div class="slides">
 
-          <!-- Mobile Menu Code -->
-          <div class="code-item">
-            <a data-fslightbox href="img/Menu-Snippet-Large.png">
-              <img class="code-img" src="img/Menu-Snippet.png" alt="">
-            </a>
-            <div class="code-content">
-              <h3 class="code-h3">
-                Mobile Menu
-              </h3>
-              <p class="code-p">
-                This is code for the mobile menu. Here I am declaring variables to get a reference to the button,
-                menu,
-                menu links and the bar icons.
-                <br>
-                I created an event listener for when the menu button is clicked and toggle a CSS class of
-                "menu-active"
-                which changes "display: none;" to "display: flex;"
-                <br>
-                Then I have created a loop to iterate over all the menu links to create another event listener for
-                when
-                a
-                link
-                is clicked. This then toggles the CSS class again to make sure the menu closes if a link is clicked.
-              </p>
-            </div>
-          </div>
+            <!-- Mobile Menu Code -->
+            <div class="code-item">
+              <pre class="code-background">
+              <code class="code-snippet">
+// Get ref to burger menu button
+const menuBtn = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const burgerBars = document.querySelectorAll(".bar");
+const menulink = document.querySelectorAll(".mobile-menu div a");
 
-          <!-- Typing Effect Code -->
-          <div class="code-item">
-            <a data-fslightbox href="img/Typing-Snippet-Large.png">
-              <img class="code-img" src="img/Typing-Snippet.png" alt="">
-            </a>
-            <div class="code-content">
-              <h3 class="code-h3">
-                Typing Effect
-              </h3>
-              <p class="code-p">
-                This code is for the typing effect on the banner. First I declared a variable that gets a reference to
-                the titles div element and created another which stores the sentence to use in an array.
-                <br>
-                First I am checking if the div element already has a title. If so, then I'm store the existing title
-                into
-                the "sentence" variable and clearing what is in the HTML.
-                <br>
-                Before creating a function, I'm setting the letter index to 0 and speed of the typing effect. The
-                function iterates through each letter in the "sentence" variable and displays it in the title div.
-              </p>
-            </div>
-          </div>
+// On click, toggles class "toggle" to mobile menu to show/hide
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("menu-active");
+  // Toggles the class "x" to add/remove a cross
+  burgerBars.forEach(bar => bar.classList.toggle('x'));
+});
 
-          <!-- Form Validation Code -->
-          <div class="code-item">
-            <a data-fslightbox href="img/Form-Snippet-Large.png">
-              <img class="code-img" src="img/Form-Snippet.png" alt="">
-            </a>
-            <div class="code-content">
-              <h3 class="code-h3">
-                Form Validation
-              </h3>
-              <p class="code-p">
-                Code for the contact form validation. I'm getting a reference to each input field and the submit button.
-                I created a variable to check the email field by testing it with the regex.
-                <br>
-                An event listener for when the form button is clicked, checks each input field for any empty values.
-                This will add a CSS class to highlight each empty field and add a string to the array variable
-                "required".
-                <br>
-                If the "required" variable has any value, preventDefault stops the form from being submitted. If all
-                fields are valid, the form gets submitted.
-              </p>
+// Hides menu when each link is clicked
+for (let i = 0; i < menulink.length; i++) {
+  menulink[i].addEventListener("click", () => {
+    mobileMenu.classList.toggle("menu-active");
+    // Toggles the class "x" to add/remove a cross
+    burgerBars.forEach(bar => bar.classList.toggle('x'));
+  })
+};
+              </code>
+            </pre>
+              <div class="code-content">
+                <h3 class="code-h3">
+                  Mobile Menu
+                </h3>
+                <p class="code-p">
+                  This is code for the mobile menu. Here I am declaring variables to get a reference to the button,
+                  menu,
+                  menu links and the bar icons.
+                  <br>
+                  I created an event listener for when the menu button is clicked and toggle a CSS class of
+                  "menu-active"
+                  which changes "display: none;" to "display: flex;"
+                  <br>
+                  Then I have created a loop to iterate over all the menu links to create another event listener for
+                  when
+                  a
+                  link
+                  is clicked. This then toggles the CSS class again to make sure the menu closes if a link is clicked.
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+              </div>
             </div>
+
+
+            <!-- Typing Effect Code -->
+            <div class="code-item">
+              <pre class="code-background">
+              <code class="code-snippet">
+// Get ref to title div
+const typing = document.querySelector(".typing");
+
+// Create initial title
+let sentence = ["My Name Is Darren Lindsay"];
+
+// If title already has text, overwrite sentence array
+if (typing.textContent !== "") {
+  // Store existing text in sentence
+  sentence = [`${typing.textContent}`];
+  // Remove existing text from HTML
+  typing.textContent = "";
+}
+
+// Set index and typing speed
+let letterIndex = 0;
+let typeSpeed = 80;
+
+const typeEffect = () => {
+  if (letterIndex < sentence[0].length) {
+    // Add each letter from sentence at current letterIndex
+    typing.textContent += sentence[0][letterIndex];
+    // Increment letterIndex to get next letter
+    letterIndex++;
+    setTimeout(typeEffect, typeSpeed);
+  }
+}
+
+// Call typeEffect function
+typeEffect();
+              </code>
+            </pre>
+              <div class="code-content">
+                <h3 class="code-h3">
+                  Typing Effect
+                </h3>
+                <p class="code-p">
+                  This code is for the typing effect on the banner. First I declared a variable that gets a reference to
+                  the titles div element and created another which stores the sentence to use in an array.
+                  <br>
+                  First I am checking if the div element already has a title. If so, then I'm store the existing title
+                  into
+                  the "sentence" variable and clearing what is in the HTML.
+                  <br>
+                  Before creating a function, I'm setting the letter index to 0 and speed of the typing effect. The
+                  function iterates through each letter in the "sentence" variable and displays it in the title div.
+                  <br>
+                  <br>
+                </p>
+              </div>
+            </div>
+
+            <!-- Form Validation Code -->
+            <div class="code-item">
+              <pre class="code-background">
+              <code class="code-snippet">
+// Get ref to input fields
+const form = document.getElementById("contact-form");
+const firstName = document.getElementById("contact-first-name");
+const lastName = document.getElementById("contact-last-name");
+const email = document.getElementById("contact-email");
+const msg = document.getElementById("contact-msg");
+const submitBtn = document.getElementById("contact-submit");
+
+// Email validation
+let emailRegex = /^[\w.%+-]+@((?:[\w-]+\.)+[a-zA-Z]{2,})$/, i;
+
+// When submit button is clicked, check if fields have values
+submitBtn.addEventListener("click", (e) => {
+
+  // Store empty fields in array
+  let required = [];
+
+  // Check if first name is empty
+  if (firstName.value === "" || firstName.value == null) {
+    firstName.placeholder = "First name required";
+    firstName.classList.add("required");
+    required.push("First name required");
+  }
+  // Check if last name is empty
+  if (lastName.value === "" || lastName.value == null) {
+    lastName.placeholder = "Last name required";
+    lastName.classList.add("required");
+    required.push("Last name required");
+  }
+  // Check email validation
+  if (!emailRegex.test(email.value)) {
+    email.placeholder = "Email required";
+    email.classList.add("required");
+    required.push("Email required");
+  }
+  // Check if message is empty
+  if (msg.value === "" || msg.value == null) {
+    msg.placeholder = "Message required"
+    msg.classList.add("required");
+    required.push("Message required");
+  }
+
+  // Prevent default if required fields are empty
+  if (required.length > 0) {
+    e.preventDefault;
+    return false;
+  }
+
+  // Submit form
+  form.submit();
+});
+              </code>
+            </pre>
+              <div class="code-content">
+                <h3 class="code-h3">
+                  Form Validation
+                </h3>
+                <p class="code-p">
+                  Code for the contact form validation. I'm getting a reference to each input field and the submit
+                  button.
+                  I created a variable to check the email field by testing it with the regex.
+                  <br>
+                  An event listener for when the form button is clicked, checks each input field for any empty values.
+                  This will add a CSS class to highlight each empty field and add a string to the array variable
+                  "required".
+                  <br>
+                  If the "required" variable has any value, preventDefault stops the form from being submitted. If all
+                  fields are valid, the form gets submitted.
+                  <br>
+                  <br>
+                </p>
+              </div>
+            </div>
+
           </div>
 
         </div>
-
       </div>
 
     </main>
@@ -205,10 +325,14 @@
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
   <script src="js/sticky/sticky.js"></script>
+  <script src="js/slick/slick.min.js"></script>
   <script src="js/fslightbox.js"></script>
   <script src="js/mobileMenu.js"></script>
   <script src="js/typingEffect.js"></script>
+  <script src="js/carousel.js"></script>
+  <script>hljs.highlightAll();</script>
 
 </body>
 
