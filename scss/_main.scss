@@ -332,7 +332,7 @@
 // Code snippets
 
 .code-container {
-  max-width: 100%;
+  max-width: 375px;
   margin: 20px auto;
 
   & .code-item {
@@ -378,10 +378,6 @@
 
   @include mq('tiny') {
     max-width: 280px;
-  }
-
-  @include mq('xxs') {
-    max-width: 375px;
   }
 
   @include mq('sm') {

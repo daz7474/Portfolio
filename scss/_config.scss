@@ -66,13 +66,13 @@ $breakpoints: (
 
 @mixin mq($break) {
   $value: map-get($breakpoints, $break );
-  $xs: map-get($breakpoints, 'xs');
+  $xxs: map-get($breakpoints, 'xxs');
 
   @if $value ==null {
     @warn "`#{break}` is not a valid breakpoint name"
   }
 
-  @else if $value <$xs {
+  @else if $value <$xxs {
     @media (max-width: $value) {
       @content;
     }

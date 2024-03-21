@@ -315,7 +315,7 @@ button {
   background-color: #333645;
   transform: translateX(100%);
   transition: all 0.5s ease;
-  z-index: 98;
+  z-index: 90;
 }
 .mobile-menu .nav-content-mobile {
   display: flex;
@@ -807,7 +807,7 @@ header .heading .scroll-down {
 }
 
 .code-container {
-  max-width: 100%;
+  max-width: 375px;
   margin: 20px auto;
 }
 .code-container .code-item {
@@ -846,11 +846,6 @@ header .heading .scroll-down {
 @media (max-width: 374px) {
   .code-container {
     max-width: 280px;
-  }
-}
-@media (max-width: 575px) {
-  .code-container {
-    max-width: 375px;
   }
 }
 @media (min-width: 768px) {
