@@ -6,7 +6,7 @@
 const typing = document.querySelector(".typing");
 
 // Create initial title
-let sentence = ["My Name Is Darren Lindsay"];
+let sentence = ["Darren Lindsay"];
 
 // If title already has text, overwrite sentence array
 if (typing.textContent !== "") {
