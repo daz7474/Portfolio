@@ -375,8 +375,12 @@
     }
   }
 
-  @include mq('xxs') {
+  @include mq('tiny') {
     max-width: 280px;
+  }
+
+  @include mq('xxs') {
+    max-width: 375px;
   }
 
   @include mq('sm') {
@@ -385,6 +389,10 @@
 
   @include mq('md') {
     max-width: 750px;
+  }
+
+  @include mq('lg') {
+    max-width: 992px;
   }
 }
 

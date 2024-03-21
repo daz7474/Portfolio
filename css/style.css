@@ -178,7 +178,7 @@ button {
   max-width: 100%;
   grid-template-columns: 1fr;
   grid-auto-rows: 75px auto auto auto auto;
-  grid-template-areas: "top-nav" "header" "main" "contact" "footer";
+  grid-template-areas: "top-nav" "header" "main" "footer";
 }
 .grid .top-nav {
   grid-area: top-nav;
@@ -199,7 +199,7 @@ button {
   .grid {
     grid-template-columns: 200px 1fr;
     grid-auto-rows: auto auto auto auto auto;
-    grid-template-areas: "nav header" "nav main" "nav contact" "nav footer";
+    grid-template-areas: "nav header" "nav main" "nav footer";
   }
 }
 
@@ -837,9 +837,14 @@ header .heading .scroll-down {
   background-color: #A5DD9B;
   transition: 1s ease;
 }
-@media (max-width: 575px) {
+@media (max-width: 374px) {
   .code-container {
     max-width: 280px;
+  }
+}
+@media (max-width: 575px) {
+  .code-container {
+    max-width: 375px;
   }
 }
 @media (min-width: 768px) {
@@ -850,6 +855,11 @@ header .heading .scroll-down {
 @media (min-width: 992px) {
   .code-container {
     max-width: 750px;
+  }
+}
+@media (min-width: 1200px) {
+  .code-container {
+    max-width: 992px;
   }
 }
 
