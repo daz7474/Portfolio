@@ -762,6 +762,7 @@ header .heading .scroll-down {
   border-color: #A5DD9B;
 }
 .contact-form .form .textarea {
+  font-family: "Poppins", sans-serif;
   height: 150px;
 }
 .contact-form .form button {
