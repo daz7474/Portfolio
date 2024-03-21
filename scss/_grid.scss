@@ -12,7 +12,6 @@
     "top-nav"
     "header"
     "main"
-    "contact"
     "footer";
 
   .top-nav {
@@ -41,7 +40,6 @@
     grid-template-areas:
       "nav header"
       "nav main"
-      "nav contact"
       "nav footer";
   }
 }
