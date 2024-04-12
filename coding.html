@@ -106,6 +106,8 @@
 
     <main id="main">
 
+      <!-- JavaScript Code -->
+
       <div class="container">
 
         <div class="title-heading">
@@ -291,6 +293,184 @@ submitBtn.addEventListener("click", (e) => {
                   <br>
                   If the "required" variable has any value, preventDefault stops the form from being submitted. If all
                   fields are valid, the form gets submitted.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PHP Code -->
+
+      <div class="container">
+
+        <div class="title-heading">
+          <h2>PHP <span class="text-secondary">Code</span></h2>
+        </div>
+
+        <div class="code-container">
+          <div class="slides">
+
+            <!-- Mobile Menu Code -->
+            <div class="code-item">
+              <pre class="code-background">
+              <code class="code-snippet">
+$pdo = null;
+
+try {
+    $env = parse_ini_file(".env");
+    $host = $env["DB_HOST"];
+    $dbname = $env["DB_NAME"];
+    $username = $env["DB_USERNAME"];
+    $password = $env["DB_PASSWORD"];
+
+    // Create a new PDO instance
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    error_log("Connection error: " . $e->getMessage());
+}
+              </code>
+            </pre>
+              <div class="code-content">
+                <h3 class="code-h3">
+                  Database Connection
+                </h3>
+                <p class="code-p">
+
+                </p>
+              </div>
+            </div>
+
+
+            <!-- Typing Effect Code -->
+            <div class="code-item">
+              <pre class="code-background">
+              <code class="code-snippet">
+header('Content-Type: application/json');
+
+// Check if PDO is null
+if ($pdo === null) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Failed to connect to the database']);
+    exit();
+}
+
+// Get form data
+$name = filter_input(INPUT_POST, 'contact-name', FILTER_SANITIZE_STRING);
+$company = filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING);
+$email = filter_input(INPUT_POST, 'contact-email', FILTER_SANITIZE_EMAIL);
+$telephone = filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_STRING);
+$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+
+// Validation
+$errors = [];
+if (empty($name)) {
+    $errors['contact-name'] = 'Name is required.';
+}
+
+if (empty($email)) {
+    $errors['contact-email'] = 'Email is required.';
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors['contact-email'] = 'Email is not valid.';
+}
+
+if (empty($telephone)) {
+    $errors['telephone'] = 'Telephone is required.';
+}
+
+if (empty($message)) {
+    $errors['message'] = 'Message is required.';
+}
+
+if (strlen($name) > 255) {
+    $errors['contact-name'] = 'Name is too long.';
+}
+
+if (strlen($email) > 255) {
+    $errors['contact-email'] = 'Email is too long.';
+}
+
+if (strlen($company) > 255) {
+    $errors['company'] = 'Company name is too long.';
+}
+
+if (!ctype_digit($telephone) || strlen($telephone) != 11) {
+    $errors['telephone'] = 'Phone number is invalid.';
+}
+
+if (strlen($message) > 1000) {
+    $errors['message'] = 'Message is too long.';
+}
+
+if (!empty($errors)) {
+    http_response_code(400);
+    echo json_encode(['errors' => $errors]);
+    exit();
+}
+
+// SQL execution
+$sql = "INSERT INTO contact_form (name, email, company_name, phone, message) VALUES (?, ?, ?, ?, ?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$name, $email, $company, $telephone, $message]);
+echo json_encode(['success' => 'Message sent successfully']);
+              </code>
+            </pre>
+              <div class="code-content">
+                <h3 class="code-h3">
+                  Contact Form Submission
+                </h3>
+                <p class="code-p">
+
+                </p>
+              </div>
+            </div>
+
+            <!-- Form Validation Code -->
+            <div class="code-item">
+              <pre class="code-background">
+              <code class="code-snippet">
+function getNews($pdo)
+{
+  try {
+    $sql = $pdo->query("SELECT * FROM news");
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    echo "Database query failed: " . htmlspecialchars($e->getMessage());
+    exit;
+  }
+}
+
+if ($pdo instanceof PDO) {
+  foreach (getNews($pdo) as $news) {
+      echo newsContent(
+          $news["image"],
+          $news["image_alt"],
+          $news["title"],
+          $news["read_time"],
+          $news["info"],
+          $news["button"],
+          $news['type'],
+          $news["author_image"],
+          $news["author_name"],
+          $news["date"],
+          $news["counter"]
+      );
+  }
+} else {
+  echo "Failed to get news items.";
+}
+              </code>
+            </pre>
+              <div class="code-content">
+                <h3 class="code-h3">
+                  Retrieve Database Data
+                </h3>
+                <p class="code-p">
+
                 </p>
               </div>
             </div>
