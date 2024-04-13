@@ -76,7 +76,7 @@ if (!empty($errors)) {
 }
 
 // SQL execution
-$sql = "INSERT INTO contact_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)";
+$sql = "INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$firstName, $lastName, $email, $subject, $message]);
 echo json_encode(['success' => 'Message sent successfully']);
