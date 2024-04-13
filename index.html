@@ -369,23 +369,34 @@
               <i class="icon fa-solid fa-envelope"></i>
             </div>
 
-            <form class="form" id="contact-form" action="">
+            <form class="form" id="contact-form" action="include/insert-contact.php" method="post">
 
               <div class="contact-name">
-                <input class="input name-item" id="contact-first-name" type="text" required placeholder="First Name*">
+                <input class="input name-item" id="contact-first-name" type="text" name="contact-first-name" required
+                  placeholder="First Name*">
 
-                <input class="input name-item" id="contact-last-name" type="text" required placeholder="Last Name*">
+                <input class="input name-item" id="contact-last-name" type="text" name="contact-last-name" required
+                  placeholder="Last Name*">
               </div>
 
-              <input class="input" id="contact-email" type="email" required placeholder="Email*">
+              <span class="error-message" id="error-contact-first-name"></span>
+              <span class="error-message" id="error-contact-last-name"></span>
 
-              <input class="input" id="contact-subject" type="text" placeholder="Subject">
+              <input class="input" id="contact-email" type="email" name="contact-email" required placeholder="Email*">
+              <span class="error-message" id="error-contact-email"></span>
 
-              <textarea class="textarea" id="contact-msg" required placeholder="Message*"></textarea>
+              <input class="input" id="contact-subject" type="text" name="contact-subject" placeholder="Subject">
+              <span class="error-message" id="error-contact-subject"></span>
+
+              <textarea class="textarea" id="contact-msg" name="contact-msg" required placeholder="Message*"></textarea>
+              <span class="error-message" id="error-contact-msg"></span>
 
               <button class="btn btn-form" id="contact-submit" type="submit">
                 Submit
               </button>
+
+              <div id="success-message"></div>
+              <div id="error-general" class="error-message"></div>
             </form>
           </div>
 
