@@ -773,6 +773,16 @@ header .heading .scroll-down {
   font-family: "Poppins", sans-serif;
   height: 150px;
 }
+.contact-form .form .error-message {
+  color: #d24d57;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.contact-form .form #success-message {
+  background-color: #A5DD9B;
+  color: #fff;
+  margin-top: 10px;
+}
 .contact-form .form button {
   color: #333645;
 }
