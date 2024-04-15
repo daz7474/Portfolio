@@ -83,6 +83,9 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
           let errorSpan = document.getElementById('error-general');
           if (errorSpan) {
             errorSpan.textContent = 'Failed to process form.';
+            setTimeout(() => {
+              errorSpan.textContent = '';
+            }, 4000);
           }
         }
       });
