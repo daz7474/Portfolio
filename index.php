@@ -285,7 +285,7 @@
           <div class="contact-form">
 
             <div class="contact-info">
-              <h2 class="text-priamry">
+              <h2 class="text-primary">
                 Contact <span class="text-primary">Me</span>
               </h2>
 
@@ -302,23 +302,23 @@
             <form class="form" id="contact-form" action="include/insert-contact.php" method="post">
 
               <div class="contact-name">
-                <input class="input name-item is-required" id="contact-first-name" type="text" name="contact-first-name" required
+                <input class="input name-item is-required" id="contact-first-name" type="text" name="contact-first-name"
                   placeholder="First Name*">
 
-                <input class="input name-item is-required" id="contact-last-name" type="text" name="contact-last-name" required
+                <input class="input name-item is-required" id="contact-last-name" type="text" name="contact-last-name"
                   placeholder="Last Name*">
               </div>
 
               <span class="error-message" id="error-contact-first-name"></span>
               <span class="error-message" id="error-contact-last-name"></span>
 
-              <input class="input is-required" id="contact-email" type="email" name="contact-email" required placeholder="Email*">
+              <input class="input is-required" id="contact-email" type="email" name="contact-email" placeholder="Email*">
               <span class="error-message" id="error-contact-email"></span>
 
               <input class="input" id="contact-subject" type="text" name="contact-subject" placeholder="Subject">
               <span class="error-message" id="error-contact-subject"></span>
 
-              <textarea class="textarea is-required" id="contact-msg" name="contact-msg" required placeholder="Message*"></textarea>
+              <textarea class="textarea is-required" id="contact-msg" name="contact-msg" placeholder="Message*"></textarea>
               <span class="error-message" id="error-contact-msg"></span>
 
               <button class="btn btn-form" id="contact-submit" type="submit">
