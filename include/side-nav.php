@@ -11,13 +11,13 @@
 
         <div class="nav-content">
           <a class="btn" href="about.php">About Me</a>
-          <a class="btn" href="#main">My Portfolio</a>
+          <a class="btn" href="index.php#main">My Portfolio</a>
           <a class="btn" href="coding.php">Coding Examples</a>
           <a class="btn" href="scs.php">SCS Scheme</a>
         </div>
 
         <div class="contact">
-          <a class="btn" href="#form">Contact Me</a>
+          <a class="btn" href="index.php#form">Contact Me</a>
         </div>
 
         <div class="socials">
