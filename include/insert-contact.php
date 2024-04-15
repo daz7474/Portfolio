@@ -9,7 +9,7 @@ $response = ['success' => 'Message sent'];
 http_response_code(200);
 
 try {
-    // Load environment variables
+    // Load env variables
     $env = parse_ini_file("../.env");
     $host = $env["DB_HOST"];
     $dbname = $env["DB_NAME"];
@@ -94,7 +94,7 @@ try {
     $mail->SMTPSecure = $smtp_secure;
     $mail->Port = $smtp_port;
     
-    //Recipients
+    // Recipients
     $mail->setFrom($email, $firstName);
     $mail->addAddress('daz7474@gmail.com', 'Darren Lindsay');
 
