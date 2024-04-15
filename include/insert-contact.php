@@ -83,24 +83,15 @@ $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
 // SQL execution
-$sql = 'INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)';
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$firstName, $lastName, $email, $subject, $message]);
-echo json_encode(['success' => 'Message sent successfully']);
-
-// Email body
-$to = "darren.lindsay@netmatters-scs.com";
-$from = $email;
-$mailBody = "Name: $firstName $lastName\nEmail: $email\nMessage: $message\n";
-$headers = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/plain; charset=UTF-8\r\n";
-$headers .= "From: <$from>";
-
-// Send email
-if (mail($to, $subject, $mailBody, $headers)) {
-    echo json_encode(['success' => 'Message sent and email delivered successfully.']);
-} else {
-    echo json_encode(['error' => 'Message sent but email delivery failed.']);
+try {
+    $sql = 'INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$firstName, $lastName, $email, $subject, $message]);
+    echo json_encode(['success' => 'Message sent']);
+} catch (PDOException $e) {
+    error_log("SQL error: " . $e->getMessage());
+    echo json_encode(['error' => 'Failed to insert data into the database']);
+    exit();
 }
 
 ?>
