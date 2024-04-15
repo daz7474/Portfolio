@@ -336,7 +336,11 @@ try {
                   Database Connection
                 </h3>
                 <p class="code-p">
-
+                  This code is used to connect to a database using PHP's PDO, which provides a way to access a database.
+                  Inside the try block, variables are set from an .env file and are used in a new instance of the PDO
+                  class. This instance is responsible for handling the connection to the database.
+                  <br>
+                  If any errors occurred, it is caught by the catch block and an error message is logged.
                 </p>
               </div>
             </div>
@@ -420,7 +424,12 @@ echo json_encode(['success' => 'Message sent successfully']);
                   Contact Form Submission
                 </h3>
                 <p class="code-p">
-
+                  Code responsible for handling the contact form submission. Variables are set from user input but is
+                  first sanitized using PHP's filter_input. The code then
+                  checks if the required fields are empty and if the length is too long. It also validates the email
+                  format and ensures the phone number only contains numbers.
+                  <br>
+                  If all validations are passed, a SQL query inserts the sanitized form data into a contact_form table.
                 </p>
               </div>
             </div>
@@ -466,7 +475,12 @@ if ($pdo instanceof PDO) {
                   Retrieve Database Data
                 </h3>
                 <p class="code-p">
-
+                  This PHP code is to retrieve news items from a database and then display them.
+                  The getNews() function queries the database for all entries in the news table.
+                  <br>
+                  If the $pdo variable is a valid PDO object, it calls the getNews() function to get all news items and
+                  loops through each item using a foreach loop. Each item calls a newsContent() function which sets the
+                  HTML structure to display the item.
                 </p>
               </div>
             </div>
