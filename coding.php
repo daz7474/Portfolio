@@ -246,7 +246,7 @@ submitBtn.addEventListener("click", (e) => {
         <div class="code-container">
           <div class="slides">
 
-            <!-- Mobile Menu Code -->
+            <!-- Database Connection Code -->
             <div class="code-item">
               <pre class="code-background">
               <code class="code-snippet">
@@ -283,7 +283,7 @@ try {
             </div>
 
 
-            <!-- Typing Effect Code -->
+            <!-- Contact Form Code -->
             <div class="code-item">
               <pre class="code-background">
               <code class="code-snippet">
@@ -291,69 +291,82 @@ header('Content-Type: application/json');
 
 // Check if PDO is null
 if ($pdo === null) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Failed to connect to the database']);
-    exit();
+  http_response_code(500);
+  echo json_encode(['error' => 'Failed to connect to the database']);
+  exit();
 }
 
 // Get form data
-$name = filter_input(INPUT_POST, 'contact-name', FILTER_SANITIZE_STRING);
-$company = filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'contact-email', FILTER_SANITIZE_EMAIL);
-$telephone = filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_STRING);
-$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+$name = isset($_POST['contact-name']) ? $_POST['contact-name'] : '';
+$company = isset($_POST['company']) ? $_POST['company'] : '';
+$email = isset($_POST['contact-email']) ? $_POST['contact-email'] : '';
+$telephone = isset($_POST['telephone']) ? $_POST['telephone'] : '';
+$message = isset($_POST['message']) ? $_POST['message'] : '';
 
 // Validation
 $errors = [];
 if (empty($name)) {
-    $errors['contact-name'] = 'Name is required.';
+  $errors['contact-name'] = 'Name is required.';
 }
 
 if (empty($email)) {
-    $errors['contact-email'] = 'Email is required.';
+  $errors['contact-email'] = 'Email is required.';
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors['contact-email'] = 'Email is not valid.';
+  $errors['contact-email'] = 'Email is not valid.';
 }
 
 if (empty($telephone)) {
-    $errors['telephone'] = 'Telephone is required.';
+  $errors['telephone'] = 'Telephone is required.';
 }
 
 if (empty($message)) {
-    $errors['message'] = 'Message is required.';
+  $errors['message'] = 'Message is required.';
 }
 
 if (strlen($name) > 255) {
-    $errors['contact-name'] = 'Name is too long.';
+  $errors['contact-name'] = 'Name is too long.';
 }
 
 if (strlen($email) > 255) {
-    $errors['contact-email'] = 'Email is too long.';
+  $errors['contact-email'] = 'Email is too long.';
 }
 
 if (strlen($company) > 255) {
-    $errors['company'] = 'Company name is too long.';
+  $errors['company'] = 'Company name is too long.';
 }
 
 if (!ctype_digit($telephone) || strlen($telephone) != 11) {
-    $errors['telephone'] = 'Phone number is invalid.';
+  $errors['telephone'] = 'Phone number is invalid.';
 }
 
 if (strlen($message) > 1000) {
-    $errors['message'] = 'Message is too long.';
+  $errors['message'] = 'Message is too long.';
 }
 
 if (!empty($errors)) {
-    http_response_code(400);
-    echo json_encode(['errors' => $errors]);
-    exit();
+  http_response_code(400);
+  echo json_encode(['errors' => $errors]);
+  exit();
 }
 
+// Sanitize inputs
+$name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+$company = htmlspecialchars($company, ENT_QUOTES, 'UTF-8');
+$email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+$telephone = htmlspecialchars($telephone, ENT_QUOTES, 'UTF-8');
+$message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+
 // SQL execution
-$sql = "INSERT INTO contact_form (name, email, company_name, phone, message) VALUES (?, ?, ?, ?, ?)";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$name, $email, $company, $telephone, $message]);
-echo json_encode(['success' => 'Message sent successfully']);
+try {
+  $sql = "INSERT INTO contact_form (name, email, company_name, phone, message) VALUES (?, ?, ?, ?, ?)";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$name, $email, $company, $telephone, $message]);
+  echo json_encode(['success' => 'Message sent successfully']);
+} catch (PDOException $e) {
+  error_log("SQL error: " . $e->getMessage());
+  echo json_encode(['error' => 'Failed to insert data into the database']);
+exit();
+}
               </code>
             </pre>
               <div class="code-content">
@@ -362,16 +375,15 @@ echo json_encode(['success' => 'Message sent successfully']);
                 </h3>
                 <p class="code-p">
                   Code responsible for handling the contact form submission. Variables are set from user input but is
-                  first sanitized using PHP's filter_input. The code then
-                  checks if the required fields are empty and if the length is too long. It also validates the email
+                  first sanitized with PHP's htmlspecialchars. The code checks if the required fields are empty and if the length is too long. It also validates the email
                   format and ensures the phone number only contains numbers.
                   <br>
-                  If all validations are passed, a SQL query inserts the sanitized form data into a contact_form table.
+                  If all validations are passed, a SQL query inserts the sanitized form data into a contact form table using a prepared statement.
                 </p>
               </div>
             </div>
 
-            <!-- Form Validation Code -->
+            <!-- Retrieve Database Code -->
             <div class="code-item">
               <pre class="code-background">
               <code class="code-snippet">
