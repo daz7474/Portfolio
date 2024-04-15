@@ -27,11 +27,11 @@ if ($pdo === null) {
 }
 
 // Get form data
-$firstName = filter_input(INPUT_POST, 'contact-first-name', FILTER_SANITIZE_STRING);
-$lastName = filter_input(INPUT_POST, 'contact-last-name', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'contact-email', FILTER_SANITIZE_EMAIL);
-$subject = filter_input(INPUT_POST, 'contact-subject', FILTER_SANITIZE_STRING);
-$message = filter_input(INPUT_POST, 'contact-msg', FILTER_SANITIZE_STRING);
+$firstName = isset($_POST['contact-first-name']) ? $_POST['contact-first-name'] : '';
+$lastName = isset($_POST['contact-last-name']) ? $_POST['contact-last-name'] : '';
+$email = isset($_POST['contact-email']) ? $_POST['contact-email'] : '';
+$subject = isset($_POST['contact-subject']) ? $_POST['contact-subject'] : '';
+$message = isset($_POST['contact-msg']) ? $_POST['contact-msg'] : '';
 
 // Validation
 $errors = [];
@@ -75,10 +75,32 @@ if (!empty($errors)) {
     exit();
 }
 
+// Sanitize inputs
+$firstName = htmlspecialchars($firstName, ENT_QUOTES, 'UTF-8');
+$lastName = htmlspecialchars($lastName, ENT_QUOTES, 'UTF-8');
+$email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+$subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
+$message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+
 // SQL execution
-$sql = "INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)";
+$sql = 'INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)';
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$firstName, $lastName, $email, $subject, $message]);
 echo json_encode(['success' => 'Message sent successfully']);
+
+// Email body
+$to = "darren.lindsay@netmatters-scs.com";
+$from = $email;
+$mailBody = "Name: $firstName $lastName\nEmail: $email\nMessage: $message\n";
+$headers = "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+$headers .= "From: <$from>";
+
+// Send email
+if (mail($to, $subject, $mailBody, $headers)) {
+    echo json_encode(['success' => 'Message sent and email delivered successfully.']);
+} else {
+    echo json_encode(['error' => 'Message sent but email delivery failed.']);
+}
 
 ?>
