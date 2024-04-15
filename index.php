@@ -285,7 +285,7 @@
           <div class="contact-form">
 
             <div class="contact-info">
-              <h2 class="text-primary">
+              <h2>
                 Contact <span class="text-primary">Me</span>
               </h2>
 
