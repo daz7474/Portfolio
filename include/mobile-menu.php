@@ -1,6 +1,6 @@
 <div class="top-nav top grid-item">
       <h1 class="mobile-initials">
-        <a class="text-light" href="index.html">
+        <a class="text-light" href="index.php">
           DL
         </a>
       </h1>
