@@ -862,7 +862,7 @@ header .heading .scroll-down {
 .code-container .code-item .code-content {
   display: flex;
   flex-direction: column;
-  height: 420px;
+  height: fit-content;
   border: 1px solid #333645;
   border-radius: 0 0 15px 15px;
   box-shadow: 1px 10px 10px rgba(51, 54, 69, 0.3);
@@ -878,21 +878,6 @@ header .heading .scroll-down {
 .code-container .code-item .code-content:hover {
   background-color: #A5DD9B;
   transition: 1s ease;
-}
-@media (max-width: 374px) {
-  .code-container .code-item .code-content {
-    height: 550px;
-  }
-}
-@media (min-width: 768px) {
-  .code-container .code-item .code-content {
-    height: 350px;
-  }
-}
-@media (min-width: 992px) {
-  .code-container .code-item .code-content {
-    height: 250px;
-  }
 }
 @media (min-width: 1200px) {
   .code-container .code-item .code-content {

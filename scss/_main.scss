@@ -378,7 +378,7 @@
     & .code-content {
       display: flex;
       flex-direction: column;
-      height: 420px;
+      height: fit-content;
       border: 1px solid $brand-primary;
       border-radius: 0 0 15px 15px;
       box-shadow: 1px 10px 10px rgba($brand-primary, .3);
@@ -397,18 +397,6 @@
       &:hover {
         background-color: $brand-secondary;
         transition: 1s ease;
-      }
-
-      @include mq('tiny') {
-        height: 550px;
-      }
-
-      @include mq('sm') {
-        height: 350px;
-      }
-
-      @include mq('md') {
-        height: 250px;
       }
 
       @include mq('lg') {
