@@ -46,7 +46,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
             errorSpan.textContent = data.errors[key];
           }
         });
-      } else {
+      } else if (data.success) {
         // Clear any messages
         document.querySelectorAll('.error-span').forEach(span => span.textContent = '');
 
