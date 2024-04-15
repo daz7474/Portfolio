@@ -1,5 +1,9 @@
 <?php
 
+require('../vendor/autoload.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 $pdo = null;
 
 try {
@@ -91,6 +95,44 @@ try {
 } catch (PDOException $e) {
     error_log("SQL error: " . $e->getMessage());
     echo json_encode(['error' => 'Failed to insert data into the database']);
+    exit();
+}
+
+// Send email
+$mail = new PHPMailer(true);
+try {
+
+    $env = parse_ini_file("../.env");
+    $host = $env["SMTP_HOST"];
+    $port = $env["SMTP_PORT"];
+    $user = $env["SMTP_USER"];
+    $password = $env["SMTP_PASSWORD"];
+    $secure = $env["SMTP_SECURE"];
+    
+    //Server settings
+    $mail->isSMTP();
+    $mail->Host = $host;
+    $mail->SMTPAuth = true;
+    $mail->Username = $user;
+    $mail->Password = $password;
+    $mail->SMTPSecure = $secure;
+    $mail->Port = $port;
+
+    //Recipients
+    $mail->setFrom($email, $firstName);
+    $mail->addAddress('daz7474@gmail.com', 'Darren Lindsay');
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'New contact form submission';
+    $mail->Body    = "Received a message from " . htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . " (" . htmlspecialchars($email) . "): <br><br>" . nl2br(htmlspecialchars($message));
+    $mail->AltBody = "Received a message from " . htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . " (" . htmlspecialchars($email) . "):\n\n" . htmlspecialchars($message);
+
+    $mail->send();
+    echo json_encode(['success' => 'Message sent']);
+} catch (Exception $e) {
+    error_log("Mailer Error: " . $mail->ErrorInfo);
+    echo json_encode(['error' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo]);
     exit();
 }
 
