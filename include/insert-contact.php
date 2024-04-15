@@ -69,7 +69,9 @@ try {
     }
 
     if (!empty($errors)) {
-        throw new Exception('Validation errors', 400);
+        http_response_code(400);
+        echo json_encode(['errors' => $errors]);
+        exit();
     }
 
     // Sanitize inputs
