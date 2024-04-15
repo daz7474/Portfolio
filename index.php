@@ -302,23 +302,23 @@
             <form class="form" id="contact-form" action="include/insert-contact.php" method="post">
 
               <div class="contact-name">
-                <input class="input name-item" id="contact-first-name" type="text" name="contact-first-name" required
+                <input class="input name-item is-required" id="contact-first-name" type="text" name="contact-first-name" required
                   placeholder="First Name*">
 
-                <input class="input name-item" id="contact-last-name" type="text" name="contact-last-name" required
+                <input class="input name-item is-required" id="contact-last-name" type="text" name="contact-last-name" required
                   placeholder="Last Name*">
               </div>
 
               <span class="error-message" id="error-contact-first-name"></span>
               <span class="error-message" id="error-contact-last-name"></span>
 
-              <input class="input" id="contact-email" type="email" name="contact-email" required placeholder="Email*">
+              <input class="input is-required" id="contact-email" type="email" name="contact-email" required placeholder="Email*">
               <span class="error-message" id="error-contact-email"></span>
 
               <input class="input" id="contact-subject" type="text" name="contact-subject" placeholder="Subject">
               <span class="error-message" id="error-contact-subject"></span>
 
-              <textarea class="textarea" id="contact-msg" name="contact-msg" required placeholder="Message*"></textarea>
+              <textarea class="textarea is-required" id="contact-msg" name="contact-msg" required placeholder="Message*"></textarea>
               <span class="error-message" id="error-contact-msg"></span>
 
               <button class="btn btn-form" id="contact-submit" type="submit">
