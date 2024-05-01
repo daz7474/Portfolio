@@ -130,6 +130,12 @@
         align-items: center;
         width: 100%;
 
+        & i {
+          font-size: 96px;
+          color: red;
+          margin: 10px 0;
+        }
+
         & span {
           font-size: 96px;
           margin: 10px 0;
