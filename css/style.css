@@ -649,7 +649,8 @@ header .heading .scroll-down {
 .project-icon {
   font-size: 32px;
   color: red;
-  margin: 10px 0;
+  vertical-align: middle;
+  margin: 0 5px;
 }
 
 .project-icon-large {
