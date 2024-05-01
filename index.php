@@ -102,18 +102,17 @@
             </a>
           </div>
 
-          <!-- Medicine World -->
+          <!-- Company Admin Panel -->
 
           <div class="item">
-            <a href="https://www.medicineworld.co.uk/" target="_blank">
+            <a href="http://laravel.darren-lindsay.netmatters-scs.co.uk/login" target="_blank">
               <div class="card card-brand-secondary">
-                <img class="card-img" src="img/perfectday-showcase.png" alt="">
+                <img class="card-img" src="img/Company-Admin-Panel.png" alt="">
                 <h2>
-                  Medicine<span class="text-secondary"> World</span>
+                  Company Admin<span class="text-secondary"> Panel</span>
                 </h2>
                 <p>
-                  Medicine World is a series of short children's stories. I created this website to showcase and promote
-                  the latest book
+                  Manage companies and employees with this admin panel created using Laravel. Includes CRUD operations for companies, employees and users.
                 </p>
 
                 <p>
@@ -270,6 +269,16 @@
                   PHP is an open-source, server-side programming language that is suited for web development and can be
                   embedded into HTML. PHP gives you the flexibility to connect and work with
                   databases.
+                </p>
+              </div>
+            </div>
+
+            <div class="skills-item">
+              <div class="skills-content">
+                <i class="fa-brands fa-laravel" aria-hidden="true"></i>
+                <h3>Laravel</h3>
+                <p>
+                Laravel is a PHP framework used for web application development. It provides a structured way to build applications by offering a set of features such as routing, authentication, sessions, and caching.
                 </p>
               </div>
             </div>
