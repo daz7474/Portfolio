@@ -42,7 +42,7 @@
       <div class="container">
 
         <div class="title-heading">
-          <h2><span class="icon-javascript"></span> <span class="text-secondary">Code</span></h2>
+          <h2><span class="icon-javascript"></span> JavaScript <span class="text-secondary">Code</span></h2>
         </div>
 
         <div class="code-container">
@@ -240,7 +240,7 @@ submitBtn.addEventListener("click", (e) => {
       <div class="container">
 
         <div class="title-heading">
-          <h2><span class="icon-php"></span> <span class="text-secondary">Code</span></h2>
+          <h2><span class="icon-php"></span> PHP <span class="text-secondary">Code</span></h2>
         </div>
 
         <div class="code-container">
@@ -438,6 +438,111 @@ if ($pdo instanceof PDO) {
 
         </div>
       </div>
+
+            <!-- Laravel Code -->
+
+            <div class="container">
+
+<div class="title-heading">
+  <h2>
+    <i class="project-icon fa-brands fa-laravel" aria-hidden="true"></i> Laravel <span class="text-secondary">Code</span>
+  </h2>
+</div>
+
+<div class="code-container">
+  <div class="slides">
+
+    <!-- Web Route Code -->
+    <div class="code-item">
+      <pre class="code-background">
+      <code class="code-snippet">
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
+use Illuminate\Support\Facades\Route;
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->group(function () {
+Route::resource('users', UserController::class);
+Route::resource('companies', CompanyController::class);
+Route::resource('employees', EmployeeController::class);
+});
+      </code>
+    </pre>
+      <div class="code-content">
+        <h3 class="code-h3">
+          Web Route
+        </h3>
+        <p class="code-p">
+          This Laravel code snippet sets up routing by importing necessary controllers and using the built in authentication routes for user management. A home route directs to the HomeController's index method.
+          <br>
+          All routes are grouped under authentication middleware, so these actions can only be accessed by logged in users.
+          The Route::resource method is used to create a full set of CRUD operations for each of these resources.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Company Controller Code -->
+    <div class="code-item">
+      <pre class="code-background">
+      <code class="code-snippet">
+public function store(StoreCompanyRequest $request)
+{
+    $data = $request->validated();
+    if ($request->hasFile('logo') && $request->file('logo')->isValid()) {
+        $data['logo'] = $request->logo->store('logos', 'public');
+    }
+
+    Company::create($data);
+    return redirect()->route('companies.index')->with('success', 'Company created successfully.');
+}
+      </code>
+    </pre>
+      <div class="code-content">
+        <h3 class="code-h3">
+          Company Controller
+        </h3>
+        <p class="code-p">
+          This function handles the storage of adding a new company. It first validates the request using a request class. If it includes a valid logo, this is stored in the logos directory in the public storage disk.
+          <br>
+          The Company::create method is then used to save the new company in the database. Finally, the function redirects the user back to the company index page, with a success message.
+        </p>
+      </div>
+    </div>
+
+    <!-- Validate Company Data Code -->
+    <div class="code-item">
+      <pre class="code-background">
+      <code class="code-snippet">
+public function rules(): array
+{
+  return [
+      'name' => 'required|string|max:255',
+      'email' => 'nullable|email|max:255|unique:companies',
+      'logo' => 'nullable|image|dimensions:min_width=100,min_height=100',
+      'website' => 'nullable|url|starts_with:http://,https://|max:255',
+  ];
+}
+      </code>
+    </pre>
+      <div class="code-content">
+        <h3 class="code-h3">
+          Validate Company Data
+        </h3>
+        <p class="code-p">
+          This is the request file that sets the validation rules for company data. It requires the name field to be a string with a maximum length. The email field is optional but must be a valid email address and unique within the 'companies' table. The logo field is also optional, but must be an image file with a minimum width and height of 100 pixels each. The website field is optional and must start with "http://" or "https://" and be a valid URL.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
 
     </main>
 
