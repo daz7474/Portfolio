@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon.eot?qsqs9d');
-  src: url('../fonts/icomoon.eot?qsqs9d#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?qsqs9d') format('truetype'),
-    url('../fonts/icomoon.woff?qsqs9d') format('woff'),
-    url('../fonts/icomoon.svg?qsqs9d#icomoon') format('svg');
+  src: url('../fonts/icomoon.eot?k14jp4');
+  src: url('../fonts/icomoon.eot?k14jp4#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?k14jp4') format('truetype'),
+    url('../fonts/icomoon.woff?k14jp4') format('woff'),
+    url('../fonts/icomoon.svg?k14jp4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,11 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-laravel:before {
+  content: "\e90b";
+  color: #ff2d20;
 }
 
 .icon-tailwindcss:before {
