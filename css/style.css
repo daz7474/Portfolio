@@ -583,8 +583,11 @@ header .heading .scroll-down {
   font-weight: 600;
   margin: 0;
 }
-.title-heading h2 .icon-javascript, .title-heading h2 .icon-php {
-  font-size: 68px;
+.title-heading h2 .icon-javascript, .title-heading h2 .icon-laravel {
+  font-size: 52px;
+}
+.title-heading h2 .icon-php {
+  font-size: 72px;
 }
 
 .heading {
