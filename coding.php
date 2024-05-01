@@ -445,7 +445,7 @@ if ($pdo instanceof PDO) {
 
 <div class="title-heading">
   <h2>
-    <i class="project-icon fa-brands fa-laravel" aria-hidden="true"></i> Laravel <span class="text-secondary">Code</span>
+    <i class="project-icon icon-laravel fa-brands fa-laravel" aria-hidden="true"></i> Laravel <span class="text-secondary">Code</span>
   </h2>
 </div>
 
