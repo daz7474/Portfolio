@@ -118,8 +118,10 @@
                 <p>
                   <span class="icon-html5"></span>
                   <span class="icon-css3"></span>
+                  <span class="icon-sass"></span>
                   <span class="icon-javascript"></span>
-                  <span class="icon-php"></span>
+                  <i class="project-icon fa-brands fa-laravel" aria-hidden="true"></i>
+                  <span class="icon-mysql"></span>
                 </p>
               </div>
             </a>
@@ -275,7 +277,7 @@
 
             <div class="skills-item">
               <div class="skills-content">
-                <i class="fa-brands fa-laravel" aria-hidden="true"></i>
+                <i class="project-icon-large fa-brands fa-laravel" aria-hidden="true"></i>
                 <h3>Laravel</h3>
                 <p>
                 Laravel is a PHP framework used for web application development. It provides a structured way to build applications by offering a set of features such as routing, authentication, sessions, and caching.
