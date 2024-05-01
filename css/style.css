@@ -632,11 +632,6 @@ header .heading .scroll-down {
   align-items: center;
   width: 100%;
 }
-.heading-skills .skills-item .skills-content i {
-  font-size: 96px;
-  color: red;
-  margin: 10px 0;
-}
 .heading-skills .skills-item .skills-content span {
   font-size: 96px;
   margin: 10px 0;
@@ -649,6 +644,18 @@ header .heading .scroll-down {
 .heading-skills > :last-child {
   margin-left: auto;
   margin-right: auto;
+}
+
+.project-icon {
+  font-size: 32px;
+  color: red;
+  margin: 10px 0;
+}
+
+.project-icon-large {
+  font-size: 96px;
+  color: red;
+  margin: 10px 0;
 }
 
 .projects-container {
