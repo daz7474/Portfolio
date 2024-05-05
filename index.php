@@ -181,7 +181,7 @@
           <!-- Image Fetch Array -->
 
           <div class="item">
-            <a href="https://daz7474.github.io/JavaScript-Array/" target="_blank">
+            <a href="http://js-array.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
               <div class="card card-brand-secondary">
                 <img class="card-img" src="img/Random-image-generator.png" alt="">
                 <h2>
