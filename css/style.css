@@ -234,6 +234,14 @@ button {
   background-color: #80c274;
   color: #333645;
 }
+.btn-project {
+  background-color: #333645;
+  color: #fff !important;
+}
+.btn-project:hover {
+  background-color: #50535e;
+  color: #333645;
+}
 .btn-form {
   width: 150px;
   background: #fff;
@@ -682,7 +690,7 @@ header .heading .scroll-down {
   align-items: center;
   position: relative;
   top: 0;
-  height: 400px;
+  height: 450px;
   text-align: center;
   color: #333645;
   background-color: #fff;
@@ -693,7 +701,6 @@ header .heading .scroll-down {
   margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
-  cursor: pointer;
   transition: 0.5s ease;
 }
 .projects-container .item .card-brand-primary:hover {
@@ -740,6 +747,9 @@ header .heading .scroll-down {
 }
 .projects-container .item .card em span {
   font-weight: 600;
+}
+.projects-container .item .card .project-btns {
+  margin-top: auto;
 }
 @media (min-width: 576px) {
   .projects-container .item .card {
