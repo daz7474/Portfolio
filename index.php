@@ -139,7 +139,7 @@
               </p>
 
               <div class="project-btns">
-                <a class="btn btn-project" href="http://laravel.darren-lindsay.netmatters-scs.co.uk/login" target="_blank">
+                <a class="btn btn-project" href="https://laravel.darren-lindsay.netmatters-scs.co.uk/login" target="_blank">
                   View
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -175,7 +175,7 @@
               </p>
 
               <div class="project-btns">
-                <a class="btn btn-project" href="http://js-array.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
+                <a class="btn btn-project" href="https://js-array.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
                   View
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
