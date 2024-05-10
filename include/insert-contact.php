@@ -1,6 +1,8 @@
 <?php
 
 require('../vendor/autoload.php');
+require('db-con.php');
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -9,22 +11,6 @@ $response = ['success' => 'Message sent'];
 http_response_code(200);
 
 try {
-    // Load env variables
-    $env = parse_ini_file("../.env");
-    $host = $env["DB_HOST"];
-    $dbname = $env["DB_NAME"];
-    $username = $env["DB_USERNAME"];
-    $password = $env["DB_PASSWORD"];
-    $smtp_host = $env["SMTP_HOST"];
-    $smtp_port = $env["SMTP_PORT"];
-    $smtp_user = $env["SMTP_USER"];
-    $smtp_password = $env["SMTP_PASSWORD"];
-    $smtp_secure = $env["SMTP_SECURE"];
-
-    // Create a new PDO instance
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Get form data
     $firstName = isset($_POST['contact-first-name']) ? $_POST['contact-first-name'] : '';
     $lastName = isset($_POST['contact-last-name']) ? $_POST['contact-last-name'] : '';
@@ -39,7 +25,7 @@ try {
     }
 
     if (empty($lastName)) {
-    $errors['contact-last-name'] = 'Last name is required.';
+        $errors['contact-last-name'] = 'Last name is required.';
     }
 
     if (empty($email)) {
@@ -53,11 +39,11 @@ try {
     }
 
     if (strlen($firstName) > 255) {
-        $errors['contact-msg'] = 'First name is too long.';
+        $errors['contact-first-name'] = 'First name is too long.';
     }
 
     if (strlen($lastName) > 255) {
-    $errors['contact-msg'] = 'Last name is too long.';
+        $errors['contact-last-name'] = 'Last name is too long.';
     }
 
     if (strlen($email) > 255) {
@@ -82,6 +68,7 @@ try {
     $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
     // SQL execution
+    /** @var PDO $pdo */
     $sql = 'INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$firstName, $lastName, $email, $subject, $message]);
@@ -89,13 +76,13 @@ try {
     // Send email using PHPMailer
     $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host = $smtp_host;
+    $mail->Host = $env['SMTP_HOST'];
     $mail->SMTPAuth = true;
-    $mail->Username = $smtp_user;
-    $mail->Password = $smtp_password;
-    $mail->SMTPSecure = $smtp_secure;
-    $mail->Port = $smtp_port;
-    
+    $mail->Username = $env['SMTP_USER'];
+    $mail->Password = $env['SMTP_PASSWORD'];
+    $mail->SMTPSecure = $env['SMTP_SECURE'];
+    $mail->Port = $env['SMTP_PORT'];
+
     // Recipients
     $mail->setFrom($email, $firstName);
     $mail->addAddress('daz7474@gmail.com', 'Darren Lindsay');
@@ -109,7 +96,7 @@ try {
     $mail->send();
 } catch (PDOException $e) {
     error_log("SQL error: " . $e->getMessage());
-    $response = ['error' => 'Database error'];
+    $response = ['error' => 'Database error: ' . $e->getMessage()];
     http_response_code(500);
 } catch (Exception $e) {
     error_log("Error: " . $e->getMessage());
@@ -119,5 +106,3 @@ try {
 
 echo json_encode($response);
 exit();
-
-?>
