@@ -52,156 +52,199 @@
           <!-- Netmatters Hompage -->
 
           <div class="item">
-            <a href="http://netmatters.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
-              <div class="card card-brand-secondary">
-                <img class="card-img" src="img/netmatters-homepage.png" alt="">
-                <h2>
-                  Netmatters<span class="text-secondary"> Homepage</span>
-                </h2>
-                <p>
-                  Recreation of the Netmatters homepage from scratch. Includes interactive elements and a responsive
-                  design.
-                </p>
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/netmatters-homepage.png" alt="">
+              <h2>
+                Netmatters<span class="text-secondary"> Homepage</span>
+              </h2>
+              <p>
+                Recreation of the Netmatters homepage from scratch. Includes interactive elements and a responsive
+                design.
+              </p>
 
-                <p>
-                  <span class="icon-html5"></span>
-                  <span class="icon-css3"></span>
-                  <span class="icon-sass"></span>
-                  <span class="icon-javascript"></span>
-                  <span class="icon-php"></span>
-                  <span class="icon-mysql"></span>
-                </p>
+              <p>
+                <span class="icon-html5"></span>
+                <span class="icon-css3"></span>
+                <span class="icon-sass"></span>
+                <span class="icon-javascript"></span>
+                <span class="icon-php"></span>
+                <span class="icon-mysql"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="https://netmatters.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a class="btn btn-project" href="https://github.com/daz7474/Netmatters-Homepage-Clone" target="_blank">
+                  GitHub
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-            </a>
+            </div>
           </div>
 
           <!-- Charity Website -->
 
           <div class="item">
-            <a href="https://www.sociabilityonline.org/" target="_blank">
-              <div class="card card-brand-secondary">
-                <img class="card-img" src="img/Sociability.png" alt="">
-                <h2>
-                  Charity<span class="text-secondary"> Website</span>
-                </h2>
-                <p>
-                  Sociability are a charity who provides a safe and welcoming environment for people who often find it
-                  difficult to
-                  socialise.
-                </p>
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/Sociability.png" alt="">
+              <h2>
+                Charity<span class="text-secondary"> Website</span>
+              </h2>
+              <p>
+                Sociability are a charity who provides a safe and welcoming environment for people who often find it
+                difficult to
+                socialise.
+              </p>
 
-                <p>
-                  <span class="icon-html5"></span>
-                  <span class="icon-css3"></span>
-                  <span class="icon-sass"></span>
-                  <span class="icon-javascript"></span>
-                  <span class="icon-php"></span>
-                  <span class="icon-mysql"></span>
-                </p>
+              <p>
+                <span class="icon-html5"></span>
+                <span class="icon-css3"></span>
+                <span class="icon-sass"></span>
+                <span class="icon-javascript"></span>
+                <span class="icon-php"></span>
+                <span class="icon-mysql"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="https://www.sociabilityonline.org/" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-            </a>
+            </div>
           </div>
 
           <!-- Company Admin Panel -->
 
           <div class="item">
-            <a href="http://laravel.darren-lindsay.netmatters-scs.co.uk/login" target="_blank">
-              <div class="card card-brand-secondary">
-                <img class="card-img" src="img/Company-Admin-Panel.png" alt="">
-                <h2>
-                  Company Admin<span class="text-secondary"> Panel</span>
-                </h2>
-                <p>
-                  Manage companies and employees with this admin panel created using Laravel. Includes CRUD operations for companies, employees and users.
-                </p>
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/Company-Admin-Panel.png" alt="">
+              <h2>
+                Company Admin<span class="text-secondary"> Panel</span>
+              </h2>
+              <p>
+                Manage companies and employees with this admin panel created using Laravel. Includes CRUD operations for companies, employees and users.
+              </p>
 
-                <p>
-                  <span class="icon-html5"></span>
-                  <span class="icon-css3"></span>
-                  <span class="icon-sass"></span>
-                  <span class="icon-javascript"></span>
-                  <i class="project-icon fa-brands fa-laravel" aria-hidden="true"></i>
-                  <span class="icon-mysql"></span>
-                </p>
+              <p>
+                <span class="icon-html5"></span>
+                <span class="icon-css3"></span>
+                <span class="icon-sass"></span>
+                <span class="icon-javascript"></span>
+                <i class="project-icon fa-brands fa-laravel" aria-hidden="true"></i>
+                <span class="icon-mysql"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="http://laravel.darren-lindsay.netmatters-scs.co.uk/login" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a class="btn btn-project" href="https://github.com/daz7474/Laravel-Admin-Panel" target="_blank">
+                  GitHub
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-            </a>
-          </div>
-
-          <!-- Sociability Pinball -->
-
-          <div class="item">
-            <a href="https://play.google.com/store/apps/details?id=com.sociability.pinball&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-              target="_blank">
-              <div class="card card-brand-secondary">
-                <img class="card-img" src="img/Sociability-Pinball-Header.png" alt="">
-                <h2>
-                  Sociability<span class="text-secondary"> Pinball</span>
-                </h2>
-                <p>
-                  A simple game of pinball made using Unreal Engine 4 with visual scripting includes different colour
-                  pinballs and tables to unlock through progression
-                </p>
-
-                <p>
-                  <span class="icon-unrealengine"></span>
-                  <span class="icon-blender"></span>
-                  <span class="icon-adobephotoshop"></span>
-                  <span class="icon-adobeillustrator"></span>
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Movie Review App -->
-
-          <div class="item">
-            <a href="https://play.google.com/store/apps/details?id=com.sociabilityonline.sociabilitymoviereviewjournal&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-              target="_blank">
-              <div class="card card-brand-secondary">
-                <img class="card-img" src="img/Movie-Review.png" alt="">
-                <h2>
-                  Movie Review<span class="text-secondary"> App</span>
-                </h2>
-                <p>
-                  An app that lets you browse a huge library of movies or tv shows and create reviews. Uses an API from
-                  The Movie Database
-                </p>
-
-                <p>
-                  <span class="icon-html5"></span>
-                  <span class="icon-css3"></span>
-                  <span class="icon-javascript"></span>
-                  <span class="icon-php"></span>
-                  <span class="icon-mysql"></span>
-                </p>
-              </div>
-            </a>
+            </div>
           </div>
 
           <!-- Image Fetch Array -->
 
           <div class="item">
-            <a href="http://js-array.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
-              <div class="card card-brand-secondary">
-                <img class="card-img" src="img/Random-image-generator.png" alt="">
-                <h2>
-                  Image Fetch<span class="text-secondary"> Array</span>
-                </h2>
-                <p>
-                  Web application that generates a random image using an API that can store images to multiple emails.
-                  Includes
-                  client-side email
-                  validation.
-                </p>
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/Random-image-generator.png" alt="">
+              <h2>
+                Image Fetch<span class="text-secondary"> Array</span>
+              </h2>
+              <p>
+                Web application that generates a random image using an API that can store images to multiple emails.
+                Includes
+                client-side email
+                validation.
+              </p>
 
-                <p>
-                  <span class="icon-html5"></span>
-                  <span class="icon-css3"></span>
-                  <span class="icon-sass"></span>
-                  <span class="icon-javascript"></span>
-                </p>
+              <p>
+                <span class="icon-html5"></span>
+                <span class="icon-css3"></span>
+                <span class="icon-sass"></span>
+                <span class="icon-javascript"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="http://js-array.darren-lindsay.netmatters-scs.co.uk/" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a class="btn btn-project" href="https://github.com/daz7474/JavaScript-Array" target="_blank">
+                  GitHub
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-            </a>
+            </div>
+          </div>
+
+          <!-- Movie Review App -->
+
+          <div class="item">
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/Movie-Review.png" alt="">
+              <h2>
+                Movie Review<span class="text-secondary"> App</span>
+              </h2>
+              <p>
+                An app that lets you browse a huge library of movies or tv shows and create reviews. Uses an API from
+                The Movie Database
+              </p>
+
+              <p>
+                <span class="icon-html5"></span>
+                <span class="icon-css3"></span>
+                <span class="icon-javascript"></span>
+                <span class="icon-php"></span>
+                <span class="icon-mysql"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="https://play.google.com/store/apps/details?id=com.sociabilityonline.sociabilitymoviereviewjournal&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sociability Pinball -->
+
+          <div class="item">
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/Sociability-Pinball-Header.png" alt="">
+              <h2>
+                Sociability<span class="text-secondary"> Pinball</span>
+              </h2>
+              <p>
+                A simple game of pinball made using Unreal Engine 4 with visual scripting includes different colour
+                pinballs and tables to unlock through progression
+              </p>
+
+              <p>
+                <span class="icon-unrealengine"></span>
+                <span class="icon-blender"></span>
+                <span class="icon-adobephotoshop"></span>
+                <span class="icon-adobeillustrator"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="https://play.google.com/store/apps/details?id=com.sociability.pinball&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -280,7 +323,7 @@
                 <i class="project-icon-large fa-brands fa-laravel" aria-hidden="true"></i>
                 <h3>Laravel</h3>
                 <p>
-                Laravel is a PHP framework used for web application development. It provides a structured way to build applications by offering a set of features such as routing, authentication, sessions, and caching.
+                  Laravel is a PHP framework used for web application development. It provides a structured way to build applications by offering a set of features such as routing, authentication, sessions, and caching.
                 </p>
               </div>
             </div>
@@ -313,11 +356,9 @@
             <form class="form" id="contact-form" action="include/insert-contact.php" method="post">
 
               <div class="contact-name">
-                <input class="input name-item is-required" id="contact-first-name" type="text" name="contact-first-name"
-                  placeholder="First Name*">
+                <input class="input name-item is-required" id="contact-first-name" type="text" name="contact-first-name" placeholder="First Name*">
 
-                <input class="input name-item is-required" id="contact-last-name" type="text" name="contact-last-name"
-                  placeholder="Last Name*">
+                <input class="input name-item is-required" id="contact-last-name" type="text" name="contact-last-name" placeholder="Last Name*">
               </div>
 
               <span class="error-message" id="error-contact-first-name"></span>
@@ -359,8 +400,7 @@
 
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="js/sticky/sticky.js"></script>
   <script src="js/mobileMenu.js"></script>
   <script src="js/typingEffect.js"></script>
