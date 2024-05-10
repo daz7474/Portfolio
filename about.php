@@ -63,7 +63,7 @@
             number of different websites, with years of experience as a solo developer. Take a look at my
             portfolio to see what I have done.
           </p>
-          <a class="btn" href="index.html#main">
+          <a class="btn" href="index.php#main">
             Portfolio
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -113,8 +113,7 @@
 
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="js/sticky/sticky.js"></script>
   <script src="js/mobileMenu.js"></script>
   <script src="js/typingEffect.js"></script>
