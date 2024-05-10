@@ -28,6 +28,16 @@
     }
   }
 
+  &-project {
+    background-color: $brand-primary;
+    color: $white !important;
+
+    &:hover {
+      background-color: $brand-project-hvr;
+      color: $brand-primary;
+    }
+  }
+
   &-form {
     width: 150px;
     background: $white;
