@@ -44,12 +44,20 @@
             Introduction
           </h3>
           <div class="heading-container">
-            <p>
-              I am a web developer with a passion for technology and enjoy challenging myself to learn new things to
-              expand my skillset, enabling me to adapt throughout my journey as a developer. I have a great
-              sense of responsibility and the ability to maintain and exhibit the traditional values of achieving
-              results.
-            </p>
+            <div>
+              <p>
+                Dynamic web developer passionate about creating interactive web experiences. I thrive on expanding my skills and embracing challenges that push my boundaries.
+              </p>
+
+              <p>
+                My journey in web development is driven by a desire to learn. This has not only enhanced my proficiency in a range of technologies but also equipped me with the agility to adapt to new tools and trends.
+              </p>
+
+              <p>
+                Whether it's building responsive websites or diving deep into code to solve complex problems, I bring a commitment to quality and innovation to every project.
+              </p>
+            </div>
+
             <img class="header-img" src="img/portrait.png" alt="">
           </div>
         </div>
