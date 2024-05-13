@@ -50,7 +50,7 @@
               </p>
 
               <p>
-                My journey in web development is driven by a desire to learn. This has not only enhanced my proficiency in a range of technologies but also equipped me with the agility to adapt to new tools and trends.
+                My journey in web development is driven by a desire to learn. This has not only enhanced my proficiency in a range of technologies but also equipped me with the agility to adapt to new tools and ways of achieving results.
               </p>
 
               <p>
