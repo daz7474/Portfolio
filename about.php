@@ -83,7 +83,7 @@
           </h3>
           <h4><em>Gaming</em></h4>
           <p>
-            I am a big gamer, from AAA to solo indie titles. One of my favourite
+            From AAA to solo indie titles. One of my favourite
             developers are FromSoftware with BloodBorne being one of my top games of all time.
           </p>
           <p>
