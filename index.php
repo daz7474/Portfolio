@@ -117,6 +117,36 @@
             </div>
           </div>
 
+          <!-- Movie Review App -->
+
+          <div class="item">
+            <div class="card card-brand-secondary">
+              <img class="card-img" src="img/Movie-Review.png" alt="">
+              <h2>
+                Movie Review<span class="text-secondary"> App</span>
+              </h2>
+              <p>
+                An app that lets you browse a huge library of movies or tv shows and create reviews. Uses an API from
+                The Movie Database
+              </p>
+
+              <p>
+                <span class="icon-html5"></span>
+                <span class="icon-css3"></span>
+                <span class="icon-javascript"></span>
+                <i class="project-icon fa-brands fa-laravel" aria-hidden="true"></i>
+                <span class="icon-mysql"></span>
+              </p>
+
+              <div class="project-btns">
+                <a class="btn btn-project" href="https://moviereview.sociabilityonline.org/" target="_blank">
+                  View
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <!-- Company Admin Panel -->
 
           <div class="item">
@@ -182,36 +212,6 @@
 
                 <a class="btn btn-project" href="https://github.com/daz7474/JavaScript-Array" target="_blank">
                   GitHub
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Movie Review App -->
-
-          <div class="item">
-            <div class="card card-brand-secondary">
-              <img class="card-img" src="img/Movie-Review.png" alt="">
-              <h2>
-                Movie Review<span class="text-secondary"> App</span>
-              </h2>
-              <p>
-                An app that lets you browse a huge library of movies or tv shows and create reviews. Uses an API from
-                The Movie Database
-              </p>
-
-              <p>
-                <span class="icon-html5"></span>
-                <span class="icon-css3"></span>
-                <span class="icon-javascript"></span>
-                <span class="icon-php"></span>
-                <span class="icon-mysql"></span>
-              </p>
-
-              <div class="project-btns">
-                <a class="btn btn-project" href="https://play.google.com/store/apps/details?id=com.sociabilityonline.sociabilitymoviereviewjournal&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
-                  View
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
