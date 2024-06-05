@@ -25,8 +25,6 @@
       <div class="heading">
         <h1 class="typing title-heading"></h1>
 
-        <img class="header-img" src="img/portrait.png" alt="">
-
         <a class="text-light scroll-down" href="#main">
           Scroll Down
           <i class="icon fa-solid fa-arrow-down"></i>
