@@ -5,30 +5,53 @@
 // Get ref to title div
 const typing = document.querySelector(".typing");
 
-// Create initial title
-let sentence = ["Darren Lindsay"];
+// Initialize sentences array
+let sentences = [];
 
-// If title already has text, overwrite sentence array
-if (typing.textContent !== "") {
-  // Store existing text in sentence
-  sentence = [`${typing.textContent}`];
-  // Remove existing text from HTML
-  typing.textContent = "";
+// Check if the title div is empty
+if (typing.textContent.trim() === "") {
+  // If empty, set sentences to "Darren Lindsay" and "Web Developer"
+  sentences = ["Darren Lindsay", "Web Developer"];
+} else {
+  // Otherwise, set sentences to the current text
+  sentences = [typing.textContent.trim()];
 }
 
-// Set index and typing speed
+// Remove the existing text from HTML
+typing.textContent = "";
+
+// Set initial index values
+let sentenceIndex = 0;
 let letterIndex = 0;
 let typeSpeed = 80;
+let deleteSpeed = 50;
+let delayBetweenSentences = 1000; // 1 second delay between sentences
 
+// Function to handle typing effect
 const typeEffect = () => {
-  if (letterIndex < sentence[0].length) {
-    // Add each letter from sentence at current letterIndex
-    typing.textContent += sentence[0][letterIndex];
-    // Increment letterIndex to get next letter
+  if (letterIndex < sentences[sentenceIndex].length) {
+    typing.textContent += sentences[sentenceIndex][letterIndex];
     letterIndex++;
     setTimeout(typeEffect, typeSpeed);
+  } else {
+    if (sentenceIndex === 0 && sentences.length > 1) {
+      // Only proceed to delete effect if there's a second sentence to type
+      setTimeout(deleteEffect, delayBetweenSentences);
+    }
   }
 }
 
-// Call typeEffect function
+// Function to handle deleting effect
+const deleteEffect = () => {
+  if (letterIndex > 0) {
+    typing.textContent = sentences[sentenceIndex].substring(0, letterIndex - 1);
+    letterIndex--;
+    setTimeout(deleteEffect, deleteSpeed);
+  } else {
+    sentenceIndex++;
+    setTimeout(typeEffect, delayBetweenSentences);
+  }
+}
+
+// Start the typing effect
 typeEffect();
