@@ -58,28 +58,34 @@
         <!-- Treehouse -->
 
         <div class="heading">
-          <h3>
-            Treehouse
-          </h3>
+          <div class="title-heading">
+            <img class="about-img" src="img/treehouse.png" alt="Treehouse">
+            <h3>
+              Treehouse
+            </h3>
+          </div>
+
           <p>
             Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to
             C#
             programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing
-            them to track their progress and see how much they've covered in certain areas. Follow the link below to see
-            my score.
+            them to track their progress and see how much they've covered in certain areas.
           </p>
-          <a class="btn" href="https://teamtreehouse.com/profiles/darrenlindsay2" target="_blank">
-            Treehouse Score
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <div class="btn">
+            Treehouse Score: 17,530
+          </div>
         </div>
 
         <!-- Netmatters -->
 
         <div class="heading">
-          <h3>
-            About Netmatters
-          </h3>
+          <div class="title-heading">
+            <img class="about-img" src="img/netmatters-ltd.png" alt="Netmatters">
+            <h3>
+              Netmatters
+            </h3>
+          </div>
+
           <p>
             Established in 2008
             <br>
@@ -115,8 +121,7 @@
 
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="js/sticky/sticky.js"></script>
   <script src="js/mobileMenu.js"></script>
   <script src="js/typingEffect.js"></script>
