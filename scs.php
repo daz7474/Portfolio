@@ -89,7 +89,7 @@
           <p>
             Established in 2008
             <br>
-            Norfolk's leading technology compan
+            Norfolk's leading technology company
             <br>
             Winner of the Princess Royal Training Award
             <br>
