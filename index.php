@@ -213,7 +213,7 @@
 
           <!-- Sociability Pinball -->
 
-          <div class="item">
+          <!-- <div class="item">
             <div class="card card-brand-secondary">
               <img class="card-img" src="img/Sociability-Pinball-Header.png" alt="">
               <h2>
@@ -238,7 +238,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- Skills -->
