@@ -1,10 +1,6 @@
 <?php
 
-require('../vendor/autoload.php');
 require('db-con.php');
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 header('Content-Type: application/json');
 $response = ['success' => 'Message sent'];
@@ -72,28 +68,6 @@ try {
     $sql = 'INSERT INTO portfolio_form (first_name, last_name, email, subject, message) VALUES (?, ?, ?, ?, ?)';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$firstName, $lastName, $email, $subject, $message]);
-
-    // Send email using PHPMailer
-    $mail = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->Host = $env['SMTP_HOST'];
-    $mail->SMTPAuth = true;
-    $mail->Username = $env['SMTP_USER'];
-    $mail->Password = $env['SMTP_PASSWORD'];
-    $mail->SMTPSecure = $env['SMTP_SECURE'];
-    $mail->Port = $env['SMTP_PORT'];
-
-    // Recipients
-    $mail->setFrom($email, $firstName);
-    $mail->addAddress('daz7474@gmail.com', 'Darren Lindsay');
-
-    // Content
-    $mail->isHTML(true);
-    $mail->Subject = 'New contact form submission';
-    $mail->Body    = "Received a message from " . htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . " (" . htmlspecialchars($email) . "): <br><br>" . nl2br(htmlspecialchars($message));
-    $mail->AltBody = "Received a message from " . htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . " (" . htmlspecialchars($email) . "):\n\n" . htmlspecialchars($message);
-
-    $mail->send();
 } catch (PDOException $e) {
     error_log("SQL error: " . $e->getMessage());
     $response = ['error' => 'Database error: ' . $e->getMessage()];
